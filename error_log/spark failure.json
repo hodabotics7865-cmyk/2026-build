@@ -1,0 +1,1628 @@
+[
+    {
+        "messageType": 2,
+        "timestamp": 53.3466796875,
+        "seqNumber": 10209,
+        "line": "********** Robot program starting **********"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 53.376953125,
+        "seqNumber": 10210,
+        "line": "NT: Listening on NT3 port 1735, NT4 port 5810"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 53.60888671875,
+        "seqNumber": 10211,
+        "line": "NT: Got a NT4 connection from 172.22.11.1 port 57124"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 53.6142578125,
+        "seqNumber": 10212,
+        "line": "NT: CONNECTED NT4 client 'Dashboard@1' (from 172.22.11.1:57124)"
+    },
+    {
+        "timestamp": 57.62548828125,
+        "seqNumber": 10213,
+        "numOccur": 1,
+        "errorCode": 0,
+        "flags": 0,
+        "details": "StatusLogger: It is not recommended to log to RoboRIO internal storage. Plug in a flash drive.",
+        "location": "",
+        "callStack": "",
+        "messageType": 1
+    },
+    {
+        "messageType": 2,
+        "timestamp": 57.62646484375,
+        "seqNumber": 10214,
+        "line": "StatusLogger: Logging REVLOG to '/home/lvuser/logs/REV_TBD_d1bfb2d6ae233170.revlog'"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 57.6279296875,
+        "seqNumber": 10215,
+        "line": "StatusLogger: Renamed REVLOG from 'REV_TBD_d1bfb2d6ae233170.revlog' to 'REV_20260221_230736.revlog' at '/home/lvuser/logs/REV_20260221_230736.revlog'"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 58.90966796875,
+        "seqNumber": 10216,
+        "line": "Instantiating NavX on roboRIO MXP Port."
+    },
+    {
+        "messageType": 2,
+        "timestamp": 58.91162109375,
+        "seqNumber": 10217,
+        "line": "NavX: Library for FRC"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 58.9150390625,
+        "seqNumber": 10218,
+        "line": "NavX: Connected."
+    },
+    {
+        "messageType": 2,
+        "timestamp": 58.916015625,
+        "seqNumber": 10219,
+        "line": "NavX: Board Type 50 (navX2-MXP (Gen 2))"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 58.9267578125,
+        "seqNumber": 10220,
+        "line": "NavX: firmware version 4.0.447"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 58.9287109375,
+        "seqNumber": 10221,
+        "line": "NavX: startup initialization and startup calibration complete."
+    },
+    {
+        "messageType": 2,
+        "timestamp": 58.93408203125,
+        "seqNumber": 10222,
+        "line": "NavX: onboard startup calibration complete."
+    },
+    {
+        "messageType": 2,
+        "timestamp": 58.93994140625,
+        "seqNumber": 10223,
+        "line": "NavX: Yaw angle auto-reset to 0.0 due to startup calibration."
+    },
+    {
+        "timestamp": 59.2138671875,
+        "seqNumber": 10224,
+        "numOccur": 1,
+        "errorCode": 11,
+        "flags": 1,
+        "details": "[Spark Max] IDs: 2, Invalid parameter value, parameter id (113) Velocity Conversion Factor: The Primary Encoder velocity conversion factor. Can be used for converting rotations/min to other units of measurement., invalid value is nan",
+        "location": "",
+        "callStack": "",
+        "messageType": 0
+    },
+    {
+        "timestamp": 59.22216796875,
+        "seqNumber": 10225,
+        "numOccur": 1,
+        "errorCode": 1,
+        "flags": 1,
+        "details": "Unhandled exception instantiating robot com.revrobotics.spark.SparkBase java.lang.IllegalStateException: Invalid parameter value, parameter id",
+        "location": "com.revrobotics.spark.SparkBase.configure(SparkBase.java:352)",
+        "callStack": "\tat com.revrobotics.spark.SparkBase.configure(SparkBase.java:352)\n\tat com.revrobotics.spark.SparkMax.configure(SparkMax.java:132)\n\tat swervelib.motors.SparkMaxSwerve.lambda$burnFlash$1(SparkMaxSwerve.java:395)\n\tat swervelib.motors.SparkMaxSwerve.configureSparkMax(SparkMaxSwerve.java:117)\n\tat swervelib.motors.SparkMaxSwerve.burnFlash(SparkMaxSwerve.java:394)\n\tat swervelib.SwerveModule.<init>(SwerveModule.java:252)\n\tat swervelib.parser.SwerveDriveConfiguration.createModules(SwerveDriveConfiguration.java:76)\n\tat swervelib.parser.SwerveDriveConfiguration.<init>(SwerveDriveConfiguration.java:56)\n\tat swervelib.parser.SwerveParser.createSwerveDrive(SwerveParser.java:196)\n\tat frc.robot.subsytem.SwerveSubsytem.<init>(SwerveSubsytem.java:34)\n\tat frc.robot.RobotContainer.<init>(RobotContainer.java:16)\n\tat frc.robot.Robot.<init>(Robot.java:17)\n\tat edu.wpi.first.wpilibj.RobotBase.runRobot(RobotBase.java:387)\n\tat edu.wpi.first.wpilibj.RobotBase.startRobot(RobotBase.java:527)\n\tat frc.robot.Main.main(Main.java:13)\n",
+        "messageType": 0
+    },
+    {
+        "messageType": 2,
+        "timestamp": 59.22265625,
+        "seqNumber": 10226,
+        "line": "Error at com.revrobotics.spark.SparkBase.configure(SparkBase.java:352): Unhandled exception instantiating robot com.revrobotics.spark.SparkBase java.lang.IllegalStateException: Invalid parameter value, parameter id"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 59.22412109375,
+        "seqNumber": 10227,
+        "line": "\tat com.revrobotics.spark.SparkBase.configure(SparkBase.java:352)"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 59.22412109375,
+        "seqNumber": 10228,
+        "line": "\tat com.revrobotics.spark.SparkMax.configure(SparkMax.java:132)"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 59.224609375,
+        "seqNumber": 10229,
+        "line": "\tat swervelib.motors.SparkMaxSwerve.lambda$burnFlash$1(SparkMaxSwerve.java:395)"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 59.22509765625,
+        "seqNumber": 10230,
+        "line": "\tat swervelib.motors.SparkMaxSwerve.configureSparkMax(SparkMaxSwerve.java:117)"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 59.22509765625,
+        "seqNumber": 10231,
+        "line": "\tat swervelib.motors.SparkMaxSwerve.burnFlash(SparkMaxSwerve.java:394)"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 59.2255859375,
+        "seqNumber": 10232,
+        "line": "\tat swervelib.SwerveModule.<init>(SwerveModule.java:252)"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 59.2255859375,
+        "seqNumber": 10233,
+        "line": "\tat swervelib.parser.SwerveDriveConfiguration.createModules(SwerveDriveConfiguration.java:76)"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 59.22607421875,
+        "seqNumber": 10234,
+        "line": "\tat swervelib.parser.SwerveDriveConfiguration.<init>(SwerveDriveConfiguration.java:56)"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 59.2265625,
+        "seqNumber": 10235,
+        "line": "\tat swervelib.parser.SwerveParser.createSwerveDrive(SwerveParser.java:196)"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 59.2265625,
+        "seqNumber": 10236,
+        "line": "\tat frc.robot.subsytem.SwerveSubsytem.<init>(SwerveSubsytem.java:34)"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 59.22705078125,
+        "seqNumber": 10237,
+        "line": "\tat frc.robot.RobotContainer.<init>(RobotContainer.java:16)"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 59.2275390625,
+        "seqNumber": 10238,
+        "line": "\tat frc.robot.Robot.<init>(Robot.java:17)"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 59.22802734375,
+        "seqNumber": 10239,
+        "line": "\tat edu.wpi.first.wpilibj.RobotBase.runRobot(RobotBase.java:387)"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 59.228515625,
+        "seqNumber": 10240,
+        "line": "\tat edu.wpi.first.wpilibj.RobotBase.startRobot(RobotBase.java:527)"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 59.228515625,
+        "seqNumber": 10241,
+        "line": "\tat frc.robot.Main.main(Main.java:13)"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 59.22900390625,
+        "seqNumber": 10242,
+        "line": ""
+    },
+    {
+        "timestamp": 59.2333984375,
+        "seqNumber": 10243,
+        "numOccur": 1,
+        "errorCode": 1,
+        "flags": 1,
+        "details": "The robot program quit unexpectedly. This is usually due to a code error.\n  The above stacktrace can help determine where the error occurred.\n  See https://wpilib.org/stacktrace for more information.\n",
+        "location": "edu.wpi.first.wpilibj.RobotBase.runRobot(RobotBase.java:400)",
+        "callStack": "",
+        "messageType": 0
+    },
+    {
+        "messageType": 2,
+        "timestamp": 59.234375,
+        "seqNumber": 10244,
+        "line": "Error at edu.wpi.first.wpilibj.RobotBase.runRobot(RobotBase.java:400): The robot program quit unexpectedly. This is usually due to a code error."
+    },
+    {
+        "messageType": 2,
+        "timestamp": 59.23583984375,
+        "seqNumber": 10245,
+        "line": "  The above stacktrace can help determine where the error occurred."
+    },
+    {
+        "messageType": 2,
+        "timestamp": 59.23583984375,
+        "seqNumber": 10246,
+        "line": "  See https://wpilib.org/stacktrace for more information."
+    },
+    {
+        "timestamp": 59.236328125,
+        "seqNumber": 10247,
+        "numOccur": 1,
+        "errorCode": 1,
+        "flags": 1,
+        "details": "Could not instantiate robot com.revrobotics.spark.SparkBase!",
+        "location": "edu.wpi.first.wpilibj.RobotBase.runRobot(RobotBase.java:406)",
+        "callStack": "",
+        "messageType": 0
+    },
+    {
+        "messageType": 2,
+        "timestamp": 59.236328125,
+        "seqNumber": 10248,
+        "line": ""
+    },
+    {
+        "messageType": 2,
+        "timestamp": 59.2392578125,
+        "seqNumber": 10249,
+        "line": "Error at edu.wpi.first.wpilibj.RobotBase.runRobot(RobotBase.java:406): Could not instantiate robot com.revrobotics.spark.SparkBase!"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 62.6484375,
+        "seqNumber": 10250,
+        "line": "********** Robot program starting **********"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 62.67822265625,
+        "seqNumber": 10251,
+        "line": "NT: Listening on NT3 port 1735, NT4 port 5810"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 62.787109375,
+        "seqNumber": 10252,
+        "line": "NT: Got a NT4 connection from 172.22.11.1 port 57145"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 62.79150390625,
+        "seqNumber": 10253,
+        "line": "NT: CONNECTED NT4 client 'Dashboard@1' (from 172.22.11.1:57145)"
+    },
+    {
+        "timestamp": 66.95263671875,
+        "seqNumber": 10254,
+        "numOccur": 1,
+        "errorCode": 0,
+        "flags": 0,
+        "details": "StatusLogger: It is not recommended to log to RoboRIO internal storage. Plug in a flash drive.",
+        "location": "",
+        "callStack": "",
+        "messageType": 1
+    },
+    {
+        "messageType": 2,
+        "timestamp": 66.95361328125,
+        "seqNumber": 10255,
+        "line": "StatusLogger: Logging REVLOG to '/home/lvuser/logs/REV_TBD_cbb6c7cfdf00353b.revlog'"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 66.95556640625,
+        "seqNumber": 10256,
+        "line": "StatusLogger: Renamed REVLOG from 'REV_TBD_cbb6c7cfdf00353b.revlog' to 'REV_20260221_230745.revlog' at '/home/lvuser/logs/REV_20260221_230745.revlog'"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 68.201171875,
+        "seqNumber": 10257,
+        "line": "Instantiating NavX on roboRIO MXP Port."
+    },
+    {
+        "messageType": 2,
+        "timestamp": 68.203125,
+        "seqNumber": 10258,
+        "line": "NavX: Library for FRC"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 68.20703125,
+        "seqNumber": 10259,
+        "line": "NavX: Connected."
+    },
+    {
+        "messageType": 2,
+        "timestamp": 68.20849609375,
+        "seqNumber": 10260,
+        "line": "NavX: Board Type 50 (navX2-MXP (Gen 2))"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 68.2109375,
+        "seqNumber": 10261,
+        "line": "NavX: firmware version 4.0.447"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 68.21240234375,
+        "seqNumber": 10262,
+        "line": "NavX: startup initialization and startup calibration complete."
+    },
+    {
+        "messageType": 2,
+        "timestamp": 68.21484375,
+        "seqNumber": 10263,
+        "line": "NavX: onboard startup calibration complete."
+    },
+    {
+        "messageType": 2,
+        "timestamp": 68.21630859375,
+        "seqNumber": 10264,
+        "line": "NavX: Yaw angle auto-reset to 0.0 due to startup calibration."
+    },
+    {
+        "timestamp": 68.5087890625,
+        "seqNumber": 10265,
+        "numOccur": 1,
+        "errorCode": 11,
+        "flags": 1,
+        "details": "[Spark Max] IDs: 2, Invalid parameter value, parameter id (113) Velocity Conversion Factor: The Primary Encoder velocity conversion factor. Can be used for converting rotations/min to other units of measurement., invalid value is nan",
+        "location": "",
+        "callStack": "",
+        "messageType": 0
+    },
+    {
+        "timestamp": 68.5166015625,
+        "seqNumber": 10266,
+        "numOccur": 1,
+        "errorCode": 1,
+        "flags": 1,
+        "details": "Unhandled exception instantiating robot com.revrobotics.spark.SparkBase java.lang.IllegalStateException: Invalid parameter value, parameter id",
+        "location": "com.revrobotics.spark.SparkBase.configure(SparkBase.java:352)",
+        "callStack": "\tat com.revrobotics.spark.SparkBase.configure(SparkBase.java:352)\n\tat com.revrobotics.spark.SparkMax.configure(SparkMax.java:132)\n\tat swervelib.motors.SparkMaxSwerve.lambda$burnFlash$1(SparkMaxSwerve.java:395)\n\tat swervelib.motors.SparkMaxSwerve.configureSparkMax(SparkMaxSwerve.java:117)\n\tat swervelib.motors.SparkMaxSwerve.burnFlash(SparkMaxSwerve.java:394)\n\tat swervelib.SwerveModule.<init>(SwerveModule.java:252)\n\tat swervelib.parser.SwerveDriveConfiguration.createModules(SwerveDriveConfiguration.java:76)\n\tat swervelib.parser.SwerveDriveConfiguration.<init>(SwerveDriveConfiguration.java:56)\n\tat swervelib.parser.SwerveParser.createSwerveDrive(SwerveParser.java:196)\n\tat frc.robot.subsytem.SwerveSubsytem.<init>(SwerveSubsytem.java:34)\n\tat frc.robot.RobotContainer.<init>(RobotContainer.java:16)\n\tat frc.robot.Robot.<init>(Robot.java:17)\n\tat edu.wpi.first.wpilibj.RobotBase.runRobot(RobotBase.java:387)\n\tat edu.wpi.first.wpilibj.RobotBase.startRobot(RobotBase.java:527)\n\tat frc.robot.Main.main(Main.java:13)\n",
+        "messageType": 0
+    },
+    {
+        "messageType": 2,
+        "timestamp": 68.517578125,
+        "seqNumber": 10267,
+        "line": "Error at com.revrobotics.spark.SparkBase.configure(SparkBase.java:352): Unhandled exception instantiating robot com.revrobotics.spark.SparkBase java.lang.IllegalStateException: Invalid parameter value, parameter id"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 68.51904296875,
+        "seqNumber": 10268,
+        "line": "\tat com.revrobotics.spark.SparkBase.configure(SparkBase.java:352)"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 68.52001953125,
+        "seqNumber": 10269,
+        "line": "\tat com.revrobotics.spark.SparkMax.configure(SparkMax.java:132)"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 68.521484375,
+        "seqNumber": 10270,
+        "line": "\tat swervelib.motors.SparkMaxSwerve.lambda$burnFlash$1(SparkMaxSwerve.java:395)"
+    },
+    {
+        "timestamp": 68.521484375,
+        "seqNumber": 10271,
+        "numOccur": 1,
+        "errorCode": 1,
+        "flags": 1,
+        "details": "The robot program quit unexpectedly. This is usually due to a code error.\n  The above stacktrace can help determine where the error occurred.\n  See https://wpilib.org/stacktrace for more information.\n",
+        "location": "edu.wpi.first.wpilibj.RobotBase.runRobot(RobotBase.java:400)",
+        "callStack": "",
+        "messageType": 0
+    },
+    {
+        "messageType": 2,
+        "timestamp": 68.52197265625,
+        "seqNumber": 10272,
+        "line": "\tat swervelib.motors.SparkMaxSwerve.configureSparkMax(SparkMaxSwerve.java:117)"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 68.52197265625,
+        "seqNumber": 10273,
+        "line": "\tat swervelib.motors.SparkMaxSwerve.burnFlash(SparkMaxSwerve.java:394)"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 68.5224609375,
+        "seqNumber": 10274,
+        "line": "\tat swervelib.SwerveModule.<init>(SwerveModule.java:252)"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 68.52294921875,
+        "seqNumber": 10275,
+        "line": "\tat swervelib.parser.SwerveDriveConfiguration.createModules(SwerveDriveConfiguration.java:76)"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 68.5234375,
+        "seqNumber": 10276,
+        "line": "\tat swervelib.parser.SwerveDriveConfiguration.<init>(SwerveDriveConfiguration.java:56)"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 68.52392578125,
+        "seqNumber": 10277,
+        "line": "\tat swervelib.parser.SwerveParser.createSwerveDrive(SwerveParser.java:196)"
+    },
+    {
+        "timestamp": 68.5244140625,
+        "seqNumber": 10278,
+        "numOccur": 1,
+        "errorCode": 1,
+        "flags": 1,
+        "details": "Could not instantiate robot com.revrobotics.spark.SparkBase!",
+        "location": "edu.wpi.first.wpilibj.RobotBase.runRobot(RobotBase.java:406)",
+        "callStack": "",
+        "messageType": 0
+    },
+    {
+        "messageType": 2,
+        "timestamp": 68.52490234375,
+        "seqNumber": 10279,
+        "line": "\tat frc.robot.subsytem.SwerveSubsytem.<init>(SwerveSubsytem.java:34)"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 68.52685546875,
+        "seqNumber": 10280,
+        "line": "\tat frc.robot.RobotContainer.<init>(RobotContainer.java:16)"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 68.52734375,
+        "seqNumber": 10281,
+        "line": "\tat frc.robot.Robot.<init>(Robot.java:17)"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 68.52783203125,
+        "seqNumber": 10282,
+        "line": "\tat edu.wpi.first.wpilibj.RobotBase.runRobot(RobotBase.java:387)"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 68.5283203125,
+        "seqNumber": 10283,
+        "line": "\tat edu.wpi.first.wpilibj.RobotBase.startRobot(RobotBase.java:527)"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 68.52978515625,
+        "seqNumber": 10284,
+        "line": "\tat frc.robot.Main.main(Main.java:13)"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 68.5302734375,
+        "seqNumber": 10285,
+        "line": ""
+    },
+    {
+        "messageType": 2,
+        "timestamp": 68.53125,
+        "seqNumber": 10286,
+        "line": "Error at edu.wpi.first.wpilibj.RobotBase.runRobot(RobotBase.java:400): The robot program quit unexpectedly. This is usually due to a code error."
+    },
+    {
+        "messageType": 2,
+        "timestamp": 68.53125,
+        "seqNumber": 10287,
+        "line": "  The above stacktrace can help determine where the error occurred."
+    },
+    {
+        "messageType": 2,
+        "timestamp": 68.53173828125,
+        "seqNumber": 10288,
+        "line": "  See https://wpilib.org/stacktrace for more information."
+    },
+    {
+        "messageType": 2,
+        "timestamp": 68.5322265625,
+        "seqNumber": 10289,
+        "line": ""
+    },
+    {
+        "messageType": 2,
+        "timestamp": 68.53271484375,
+        "seqNumber": 10290,
+        "line": "Error at edu.wpi.first.wpilibj.RobotBase.runRobot(RobotBase.java:406): Could not instantiate robot com.revrobotics.spark.SparkBase!"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 71.88232421875,
+        "seqNumber": 10291,
+        "line": "********** Robot program starting **********"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 71.9072265625,
+        "seqNumber": 10292,
+        "line": "NT: Listening on NT3 port 1735, NT4 port 5810"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 72.06982421875,
+        "seqNumber": 10293,
+        "line": "NT: Got a NT4 connection from 172.22.11.1 port 57183"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 72.0732421875,
+        "seqNumber": 10294,
+        "line": "NT: CONNECTED NT4 client 'Dashboard@1' (from 172.22.11.1:57183)"
+    },
+    {
+        "timestamp": 76.18115234375,
+        "seqNumber": 10295,
+        "numOccur": 1,
+        "errorCode": 0,
+        "flags": 0,
+        "details": "StatusLogger: It is not recommended to log to RoboRIO internal storage. Plug in a flash drive.",
+        "location": "",
+        "callStack": "",
+        "messageType": 1
+    },
+    {
+        "messageType": 2,
+        "timestamp": 76.18212890625,
+        "seqNumber": 10296,
+        "line": "StatusLogger: Logging REVLOG to '/home/lvuser/logs/REV_TBD_d34dab7c99f88e98.revlog'"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 76.18408203125,
+        "seqNumber": 10297,
+        "line": "StatusLogger: Renamed REVLOG from 'REV_TBD_d34dab7c99f88e98.revlog' to 'REV_20260221_230755.revlog' at '/home/lvuser/logs/REV_20260221_230755.revlog'"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 77.38330078125,
+        "seqNumber": 10298,
+        "line": "Instantiating NavX on roboRIO MXP Port."
+    },
+    {
+        "messageType": 2,
+        "timestamp": 77.384765625,
+        "seqNumber": 10299,
+        "line": "NavX: Library for FRC"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 77.3896484375,
+        "seqNumber": 10300,
+        "line": "NavX: Connected."
+    },
+    {
+        "messageType": 2,
+        "timestamp": 77.39111328125,
+        "seqNumber": 10301,
+        "line": "NavX: Board Type 50 (navX2-MXP (Gen 2))"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 77.392578125,
+        "seqNumber": 10302,
+        "line": "NavX: firmware version 4.0.447"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 77.39453125,
+        "seqNumber": 10303,
+        "line": "NavX: startup initialization and startup calibration complete."
+    },
+    {
+        "messageType": 2,
+        "timestamp": 77.4052734375,
+        "seqNumber": 10304,
+        "line": "NavX: onboard startup calibration complete."
+    },
+    {
+        "messageType": 2,
+        "timestamp": 77.408203125,
+        "seqNumber": 10305,
+        "line": "NavX: Yaw angle auto-reset to 0.0 due to startup calibration."
+    },
+    {
+        "timestamp": 77.6826171875,
+        "seqNumber": 10306,
+        "numOccur": 1,
+        "errorCode": 11,
+        "flags": 1,
+        "details": "[Spark Max] IDs: 2, Invalid parameter value, parameter id (113) Velocity Conversion Factor: The Primary Encoder velocity conversion factor. Can be used for converting rotations/min to other units of measurement., invalid value is nan",
+        "location": "",
+        "callStack": "",
+        "messageType": 0
+    },
+    {
+        "timestamp": 77.69091796875,
+        "seqNumber": 10307,
+        "numOccur": 1,
+        "errorCode": 1,
+        "flags": 1,
+        "details": "Unhandled exception instantiating robot com.revrobotics.spark.SparkBase java.lang.IllegalStateException: Invalid parameter value, parameter id",
+        "location": "com.revrobotics.spark.SparkBase.configure(SparkBase.java:352)",
+        "callStack": "\tat com.revrobotics.spark.SparkBase.configure(SparkBase.java:352)\n\tat com.revrobotics.spark.SparkMax.configure(SparkMax.java:132)\n\tat swervelib.motors.SparkMaxSwerve.lambda$burnFlash$1(SparkMaxSwerve.java:395)\n\tat swervelib.motors.SparkMaxSwerve.configureSparkMax(SparkMaxSwerve.java:117)\n\tat swervelib.motors.SparkMaxSwerve.burnFlash(SparkMaxSwerve.java:394)\n\tat swervelib.SwerveModule.<init>(SwerveModule.java:252)\n\tat swervelib.parser.SwerveDriveConfiguration.createModules(SwerveDriveConfiguration.java:76)\n\tat swervelib.parser.SwerveDriveConfiguration.<init>(SwerveDriveConfiguration.java:56)\n\tat swervelib.parser.SwerveParser.createSwerveDrive(SwerveParser.java:196)\n\tat frc.robot.subsytem.SwerveSubsytem.<init>(SwerveSubsytem.java:34)\n\tat frc.robot.RobotContainer.<init>(RobotContainer.java:16)\n\tat frc.robot.Robot.<init>(Robot.java:17)\n\tat edu.wpi.first.wpilibj.RobotBase.runRobot(RobotBase.java:387)\n\tat edu.wpi.first.wpilibj.RobotBase.startRobot(RobotBase.java:527)\n\tat frc.robot.Main.main(Main.java:13)\n",
+        "messageType": 0
+    },
+    {
+        "messageType": 2,
+        "timestamp": 77.69140625,
+        "seqNumber": 10308,
+        "line": "Error at com.revrobotics.spark.SparkBase.configure(SparkBase.java:352): Unhandled exception instantiating robot com.revrobotics.spark.SparkBase java.lang.IllegalStateException: Invalid parameter value, parameter id"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 77.69287109375,
+        "seqNumber": 10309,
+        "line": "\tat com.revrobotics.spark.SparkBase.configure(SparkBase.java:352)"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 77.693359375,
+        "seqNumber": 10310,
+        "line": "\tat com.revrobotics.spark.SparkMax.configure(SparkMax.java:132)"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 77.6943359375,
+        "seqNumber": 10311,
+        "line": "\tat swervelib.motors.SparkMaxSwerve.lambda$burnFlash$1(SparkMaxSwerve.java:395)"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 77.69482421875,
+        "seqNumber": 10312,
+        "line": "\tat swervelib.motors.SparkMaxSwerve.configureSparkMax(SparkMaxSwerve.java:117)"
+    },
+    {
+        "timestamp": 77.6953125,
+        "seqNumber": 10313,
+        "numOccur": 1,
+        "errorCode": 1,
+        "flags": 1,
+        "details": "The robot program quit unexpectedly. This is usually due to a code error.\n  The above stacktrace can help determine where the error occurred.\n  See https://wpilib.org/stacktrace for more information.\n",
+        "location": "edu.wpi.first.wpilibj.RobotBase.runRobot(RobotBase.java:400)",
+        "callStack": "",
+        "messageType": 0
+    },
+    {
+        "messageType": 2,
+        "timestamp": 77.6953125,
+        "seqNumber": 10314,
+        "line": "\tat swervelib.motors.SparkMaxSwerve.burnFlash(SparkMaxSwerve.java:394)"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 77.6962890625,
+        "seqNumber": 10315,
+        "line": "\tat swervelib.SwerveModule.<init>(SwerveModule.java:252)"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 77.69677734375,
+        "seqNumber": 10316,
+        "line": "\tat swervelib.parser.SwerveDriveConfiguration.createModules(SwerveDriveConfiguration.java:76)"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 77.697265625,
+        "seqNumber": 10317,
+        "line": "\tat swervelib.parser.SwerveDriveConfiguration.<init>(SwerveDriveConfiguration.java:56)"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 77.697265625,
+        "seqNumber": 10318,
+        "line": "\tat swervelib.parser.SwerveParser.createSwerveDrive(SwerveParser.java:196)"
+    },
+    {
+        "timestamp": 77.69775390625,
+        "seqNumber": 10319,
+        "numOccur": 1,
+        "errorCode": 1,
+        "flags": 1,
+        "details": "Could not instantiate robot com.revrobotics.spark.SparkBase!",
+        "location": "edu.wpi.first.wpilibj.RobotBase.runRobot(RobotBase.java:406)",
+        "callStack": "",
+        "messageType": 0
+    },
+    {
+        "messageType": 2,
+        "timestamp": 77.6982421875,
+        "seqNumber": 10320,
+        "line": "\tat frc.robot.subsytem.SwerveSubsytem.<init>(SwerveSubsytem.java:34)"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 77.7021484375,
+        "seqNumber": 10321,
+        "line": "\tat frc.robot.RobotContainer.<init>(RobotContainer.java:16)"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 77.70263671875,
+        "seqNumber": 10322,
+        "line": "\tat frc.robot.Robot.<init>(Robot.java:17)"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 77.70263671875,
+        "seqNumber": 10323,
+        "line": "\tat edu.wpi.first.wpilibj.RobotBase.runRobot(RobotBase.java:387)"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 77.703125,
+        "seqNumber": 10324,
+        "line": "\tat edu.wpi.first.wpilibj.RobotBase.startRobot(RobotBase.java:527)"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 77.70458984375,
+        "seqNumber": 10325,
+        "line": "\tat frc.robot.Main.main(Main.java:13)"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 77.70458984375,
+        "seqNumber": 10326,
+        "line": ""
+    },
+    {
+        "messageType": 2,
+        "timestamp": 77.705078125,
+        "seqNumber": 10327,
+        "line": "Error at edu.wpi.first.wpilibj.RobotBase.runRobot(RobotBase.java:400): The robot program quit unexpectedly. This is usually due to a code error."
+    },
+    {
+        "messageType": 2,
+        "timestamp": 77.70556640625,
+        "seqNumber": 10328,
+        "line": "  The above stacktrace can help determine where the error occurred."
+    },
+    {
+        "messageType": 2,
+        "timestamp": 77.7060546875,
+        "seqNumber": 10329,
+        "line": "  See https://wpilib.org/stacktrace for more information."
+    },
+    {
+        "messageType": 2,
+        "timestamp": 77.70703125,
+        "seqNumber": 10330,
+        "line": ""
+    },
+    {
+        "messageType": 2,
+        "timestamp": 77.70751953125,
+        "seqNumber": 10331,
+        "line": "Error at edu.wpi.first.wpilibj.RobotBase.runRobot(RobotBase.java:406): Could not instantiate robot com.revrobotics.spark.SparkBase!"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 81.0830078125,
+        "seqNumber": 10332,
+        "line": "********** Robot program starting **********"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 81.10888671875,
+        "seqNumber": 10333,
+        "line": "NT: Listening on NT3 port 1735, NT4 port 5810"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 81.24951171875,
+        "seqNumber": 10334,
+        "line": "NT: Got a NT4 connection from 172.22.11.1 port 57207"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 81.25537109375,
+        "seqNumber": 10335,
+        "line": "NT: CONNECTED NT4 client 'Dashboard@1' (from 172.22.11.1:57207)"
+    },
+    {
+        "timestamp": 85.337890625,
+        "seqNumber": 10336,
+        "numOccur": 1,
+        "errorCode": 0,
+        "flags": 0,
+        "details": "StatusLogger: It is not recommended to log to RoboRIO internal storage. Plug in a flash drive.",
+        "location": "",
+        "callStack": "",
+        "messageType": 1
+    },
+    {
+        "messageType": 2,
+        "timestamp": 85.33837890625,
+        "seqNumber": 10337,
+        "line": "StatusLogger: Logging REVLOG to '/home/lvuser/logs/REV_TBD_6b02d6d8fa6e8dc0.revlog'"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 85.3408203125,
+        "seqNumber": 10338,
+        "line": "StatusLogger: Renamed REVLOG from 'REV_TBD_6b02d6d8fa6e8dc0.revlog' to 'REV_20260221_230804.revlog' at '/home/lvuser/logs/REV_20260221_230804.revlog'"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 86.576171875,
+        "seqNumber": 10339,
+        "line": "Instantiating NavX on roboRIO MXP Port."
+    },
+    {
+        "messageType": 2,
+        "timestamp": 86.578125,
+        "seqNumber": 10340,
+        "line": "NavX: Library for FRC"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 86.58203125,
+        "seqNumber": 10341,
+        "line": "NavX: Connected."
+    },
+    {
+        "messageType": 2,
+        "timestamp": 86.5830078125,
+        "seqNumber": 10342,
+        "line": "NavX: Board Type 50 (navX2-MXP (Gen 2))"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 86.58447265625,
+        "seqNumber": 10343,
+        "line": "NavX: firmware version 4.0.447"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 86.58642578125,
+        "seqNumber": 10344,
+        "line": "NavX: startup initialization and startup calibration complete."
+    },
+    {
+        "messageType": 2,
+        "timestamp": 86.5888671875,
+        "seqNumber": 10345,
+        "line": "NavX: onboard startup calibration complete."
+    },
+    {
+        "messageType": 2,
+        "timestamp": 86.59375,
+        "seqNumber": 10346,
+        "line": "NavX: Yaw angle auto-reset to 0.0 due to startup calibration."
+    },
+    {
+        "timestamp": 86.87548828125,
+        "seqNumber": 10347,
+        "numOccur": 1,
+        "errorCode": 11,
+        "flags": 1,
+        "details": "[Spark Max] IDs: 2, Invalid parameter value, parameter id (113) Velocity Conversion Factor: The Primary Encoder velocity conversion factor. Can be used for converting rotations/min to other units of measurement., invalid value is nan",
+        "location": "",
+        "callStack": "",
+        "messageType": 0
+    },
+    {
+        "timestamp": 86.8837890625,
+        "seqNumber": 10348,
+        "numOccur": 1,
+        "errorCode": 1,
+        "flags": 1,
+        "details": "Unhandled exception instantiating robot com.revrobotics.spark.SparkBase java.lang.IllegalStateException: Invalid parameter value, parameter id",
+        "location": "com.revrobotics.spark.SparkBase.configure(SparkBase.java:352)",
+        "callStack": "\tat com.revrobotics.spark.SparkBase.configure(SparkBase.java:352)\n\tat com.revrobotics.spark.SparkMax.configure(SparkMax.java:132)\n\tat swervelib.motors.SparkMaxSwerve.lambda$burnFlash$1(SparkMaxSwerve.java:395)\n\tat swervelib.motors.SparkMaxSwerve.configureSparkMax(SparkMaxSwerve.java:117)\n\tat swervelib.motors.SparkMaxSwerve.burnFlash(SparkMaxSwerve.java:394)\n\tat swervelib.SwerveModule.<init>(SwerveModule.java:252)\n\tat swervelib.parser.SwerveDriveConfiguration.createModules(SwerveDriveConfiguration.java:76)\n\tat swervelib.parser.SwerveDriveConfiguration.<init>(SwerveDriveConfiguration.java:56)\n\tat swervelib.parser.SwerveParser.createSwerveDrive(SwerveParser.java:196)\n\tat frc.robot.subsytem.SwerveSubsytem.<init>(SwerveSubsytem.java:34)\n\tat frc.robot.RobotContainer.<init>(RobotContainer.java:16)\n\tat frc.robot.Robot.<init>(Robot.java:17)\n\tat edu.wpi.first.wpilibj.RobotBase.runRobot(RobotBase.java:387)\n\tat edu.wpi.first.wpilibj.RobotBase.startRobot(RobotBase.java:527)\n\tat frc.robot.Main.main(Main.java:13)\n",
+        "messageType": 0
+    },
+    {
+        "messageType": 2,
+        "timestamp": 86.88427734375,
+        "seqNumber": 10349,
+        "line": "Error at com.revrobotics.spark.SparkBase.configure(SparkBase.java:352): Unhandled exception instantiating robot com.revrobotics.spark.SparkBase java.lang.IllegalStateException: Invalid parameter value, parameter id"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 86.88720703125,
+        "seqNumber": 10350,
+        "line": "\tat com.revrobotics.spark.SparkBase.configure(SparkBase.java:352)"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 86.8876953125,
+        "seqNumber": 10351,
+        "line": "\tat com.revrobotics.spark.SparkMax.configure(SparkMax.java:132)"
+    },
+    {
+        "timestamp": 86.8876953125,
+        "seqNumber": 10352,
+        "numOccur": 1,
+        "errorCode": 1,
+        "flags": 1,
+        "details": "The robot program quit unexpectedly. This is usually due to a code error.\n  The above stacktrace can help determine where the error occurred.\n  See https://wpilib.org/stacktrace for more information.\n",
+        "location": "edu.wpi.first.wpilibj.RobotBase.runRobot(RobotBase.java:400)",
+        "callStack": "",
+        "messageType": 0
+    },
+    {
+        "messageType": 2,
+        "timestamp": 86.8876953125,
+        "seqNumber": 10353,
+        "line": "\tat swervelib.motors.SparkMaxSwerve.lambda$burnFlash$1(SparkMaxSwerve.java:395)"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 86.8935546875,
+        "seqNumber": 10354,
+        "line": "\tat swervelib.motors.SparkMaxSwerve.configureSparkMax(SparkMaxSwerve.java:117)"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 86.8935546875,
+        "seqNumber": 10355,
+        "line": "\tat swervelib.motors.SparkMaxSwerve.burnFlash(SparkMaxSwerve.java:394)"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 86.89404296875,
+        "seqNumber": 10356,
+        "line": "\tat swervelib.SwerveModule.<init>(SwerveModule.java:252)"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 86.89453125,
+        "seqNumber": 10357,
+        "line": "\tat swervelib.parser.SwerveDriveConfiguration.createModules(SwerveDriveConfiguration.java:76)"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 86.89453125,
+        "seqNumber": 10358,
+        "line": "\tat swervelib.parser.SwerveDriveConfiguration.<init>(SwerveDriveConfiguration.java:56)"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 86.89501953125,
+        "seqNumber": 10359,
+        "line": "\tat swervelib.parser.SwerveParser.createSwerveDrive(SwerveParser.java:196)"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 86.89501953125,
+        "seqNumber": 10360,
+        "line": "\tat frc.robot.subsytem.SwerveSubsytem.<init>(SwerveSubsytem.java:34)"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 86.8955078125,
+        "seqNumber": 10361,
+        "line": "\tat frc.robot.RobotContainer.<init>(RobotContainer.java:16)"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 86.8955078125,
+        "seqNumber": 10362,
+        "line": "\tat frc.robot.Robot.<init>(Robot.java:17)"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 86.89599609375,
+        "seqNumber": 10363,
+        "line": "\tat edu.wpi.first.wpilibj.RobotBase.runRobot(RobotBase.java:387)"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 86.89599609375,
+        "seqNumber": 10364,
+        "line": "\tat edu.wpi.first.wpilibj.RobotBase.startRobot(RobotBase.java:527)"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 86.896484375,
+        "seqNumber": 10365,
+        "line": "\tat frc.robot.Main.main(Main.java:13)"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 86.896484375,
+        "seqNumber": 10366,
+        "line": ""
+    },
+    {
+        "messageType": 2,
+        "timestamp": 86.8974609375,
+        "seqNumber": 10367,
+        "line": "Error at edu.wpi.first.wpilibj.RobotBase.runRobot(RobotBase.java:400): The robot program quit unexpectedly. This is usually due to a code error."
+    },
+    {
+        "messageType": 2,
+        "timestamp": 86.89794921875,
+        "seqNumber": 10368,
+        "line": "  The above stacktrace can help determine where the error occurred."
+    },
+    {
+        "messageType": 2,
+        "timestamp": 86.8984375,
+        "seqNumber": 10369,
+        "line": "  See https://wpilib.org/stacktrace for more information."
+    },
+    {
+        "messageType": 2,
+        "timestamp": 86.89892578125,
+        "seqNumber": 10370,
+        "line": ""
+    },
+    {
+        "timestamp": 86.9013671875,
+        "seqNumber": 10371,
+        "numOccur": 1,
+        "errorCode": 1,
+        "flags": 1,
+        "details": "Could not instantiate robot com.revrobotics.spark.SparkBase!",
+        "location": "edu.wpi.first.wpilibj.RobotBase.runRobot(RobotBase.java:406)",
+        "callStack": "",
+        "messageType": 0
+    },
+    {
+        "messageType": 2,
+        "timestamp": 86.90185546875,
+        "seqNumber": 10372,
+        "line": "Error at edu.wpi.first.wpilibj.RobotBase.runRobot(RobotBase.java:406): Could not instantiate robot com.revrobotics.spark.SparkBase!"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 90.26806640625,
+        "seqNumber": 10373,
+        "line": "********** Robot program starting **********"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 90.294921875,
+        "seqNumber": 10374,
+        "line": "NT: Listening on NT3 port 1735, NT4 port 5810"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 90.45263671875,
+        "seqNumber": 10375,
+        "line": "NT: Got a NT4 connection from 172.22.11.1 port 57230"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 90.45654296875,
+        "seqNumber": 10376,
+        "line": "NT: CONNECTED NT4 client 'Dashboard@1' (from 172.22.11.1:57230)"
+    },
+    {
+        "timestamp": 94.5400390625,
+        "seqNumber": 10377,
+        "numOccur": 1,
+        "errorCode": 0,
+        "flags": 0,
+        "details": "StatusLogger: It is not recommended to log to RoboRIO internal storage. Plug in a flash drive.",
+        "location": "",
+        "callStack": "",
+        "messageType": 1
+    },
+    {
+        "messageType": 2,
+        "timestamp": 94.541015625,
+        "seqNumber": 10378,
+        "line": "StatusLogger: Logging REVLOG to '/home/lvuser/logs/REV_TBD_4d64eb969a1c452e.revlog'"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 94.54248046875,
+        "seqNumber": 10379,
+        "line": "StatusLogger: Renamed REVLOG from 'REV_TBD_4d64eb969a1c452e.revlog' to 'REV_20260221_230813.revlog' at '/home/lvuser/logs/REV_20260221_230813.revlog'"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 95.76171875,
+        "seqNumber": 10380,
+        "line": "Instantiating NavX on roboRIO MXP Port."
+    },
+    {
+        "messageType": 2,
+        "timestamp": 95.7626953125,
+        "seqNumber": 10381,
+        "line": "NavX: Library for FRC"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 95.7646484375,
+        "seqNumber": 10382,
+        "line": "NavX: Connected."
+    },
+    {
+        "messageType": 2,
+        "timestamp": 95.76611328125,
+        "seqNumber": 10383,
+        "line": "NavX: Board Type 50 (navX2-MXP (Gen 2))"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 95.7666015625,
+        "seqNumber": 10384,
+        "line": "NavX: firmware version 4.0.447"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 95.767578125,
+        "seqNumber": 10385,
+        "line": "NavX: startup initialization and startup calibration complete."
+    },
+    {
+        "messageType": 2,
+        "timestamp": 95.76806640625,
+        "seqNumber": 10386,
+        "line": "NavX: onboard startup calibration complete."
+    },
+    {
+        "messageType": 2,
+        "timestamp": 95.7685546875,
+        "seqNumber": 10387,
+        "line": "NavX: Yaw angle auto-reset to 0.0 due to startup calibration."
+    },
+    {
+        "timestamp": 96.05810546875,
+        "seqNumber": 10388,
+        "numOccur": 1,
+        "errorCode": 11,
+        "flags": 1,
+        "details": "[Spark Max] IDs: 2, Invalid parameter value, parameter id (113) Velocity Conversion Factor: The Primary Encoder velocity conversion factor. Can be used for converting rotations/min to other units of measurement., invalid value is nan",
+        "location": "",
+        "callStack": "",
+        "messageType": 0
+    },
+    {
+        "timestamp": 96.06640625,
+        "seqNumber": 10389,
+        "numOccur": 1,
+        "errorCode": 1,
+        "flags": 1,
+        "details": "Unhandled exception instantiating robot com.revrobotics.spark.SparkBase java.lang.IllegalStateException: Invalid parameter value, parameter id",
+        "location": "com.revrobotics.spark.SparkBase.configure(SparkBase.java:352)",
+        "callStack": "\tat com.revrobotics.spark.SparkBase.configure(SparkBase.java:352)\n\tat com.revrobotics.spark.SparkMax.configure(SparkMax.java:132)\n\tat swervelib.motors.SparkMaxSwerve.lambda$burnFlash$1(SparkMaxSwerve.java:395)\n\tat swervelib.motors.SparkMaxSwerve.configureSparkMax(SparkMaxSwerve.java:117)\n\tat swervelib.motors.SparkMaxSwerve.burnFlash(SparkMaxSwerve.java:394)\n\tat swervelib.SwerveModule.<init>(SwerveModule.java:252)\n\tat swervelib.parser.SwerveDriveConfiguration.createModules(SwerveDriveConfiguration.java:76)\n\tat swervelib.parser.SwerveDriveConfiguration.<init>(SwerveDriveConfiguration.java:56)\n\tat swervelib.parser.SwerveParser.createSwerveDrive(SwerveParser.java:196)\n\tat frc.robot.subsytem.SwerveSubsytem.<init>(SwerveSubsytem.java:34)\n\tat frc.robot.RobotContainer.<init>(RobotContainer.java:16)\n\tat frc.robot.Robot.<init>(Robot.java:17)\n\tat edu.wpi.first.wpilibj.RobotBase.runRobot(RobotBase.java:387)\n\tat edu.wpi.first.wpilibj.RobotBase.startRobot(RobotBase.java:527)\n\tat frc.robot.Main.main(Main.java:13)\n",
+        "messageType": 0
+    },
+    {
+        "messageType": 2,
+        "timestamp": 96.0673828125,
+        "seqNumber": 10390,
+        "line": "Error at com.revrobotics.spark.SparkBase.configure(SparkBase.java:352): Unhandled exception instantiating robot com.revrobotics.spark.SparkBase java.lang.IllegalStateException: Invalid parameter value, parameter id"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 96.06884765625,
+        "seqNumber": 10391,
+        "line": "\tat com.revrobotics.spark.SparkBase.configure(SparkBase.java:352)"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 96.0693359375,
+        "seqNumber": 10392,
+        "line": "\tat com.revrobotics.spark.SparkMax.configure(SparkMax.java:132)"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 96.0703125,
+        "seqNumber": 10393,
+        "line": "\tat swervelib.motors.SparkMaxSwerve.lambda$burnFlash$1(SparkMaxSwerve.java:395)"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 96.0712890625,
+        "seqNumber": 10394,
+        "line": "\tat swervelib.motors.SparkMaxSwerve.configureSparkMax(SparkMaxSwerve.java:117)"
+    },
+    {
+        "timestamp": 96.0712890625,
+        "seqNumber": 10395,
+        "numOccur": 1,
+        "errorCode": 1,
+        "flags": 1,
+        "details": "The robot program quit unexpectedly. This is usually due to a code error.\n  The above stacktrace can help determine where the error occurred.\n  See https://wpilib.org/stacktrace for more information.\n",
+        "location": "edu.wpi.first.wpilibj.RobotBase.runRobot(RobotBase.java:400)",
+        "callStack": "",
+        "messageType": 0
+    },
+    {
+        "messageType": 2,
+        "timestamp": 96.07177734375,
+        "seqNumber": 10396,
+        "line": "\tat swervelib.motors.SparkMaxSwerve.burnFlash(SparkMaxSwerve.java:394)"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 96.07275390625,
+        "seqNumber": 10397,
+        "line": "\tat swervelib.SwerveModule.<init>(SwerveModule.java:252)"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 96.07373046875,
+        "seqNumber": 10398,
+        "line": "\tat swervelib.parser.SwerveDriveConfiguration.createModules(SwerveDriveConfiguration.java:76)"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 96.07421875,
+        "seqNumber": 10399,
+        "line": "\tat swervelib.parser.SwerveDriveConfiguration.<init>(SwerveDriveConfiguration.java:56)"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 96.07470703125,
+        "seqNumber": 10400,
+        "line": "\tat swervelib.parser.SwerveParser.createSwerveDrive(SwerveParser.java:196)"
+    },
+    {
+        "timestamp": 96.07470703125,
+        "seqNumber": 10401,
+        "numOccur": 1,
+        "errorCode": 1,
+        "flags": 1,
+        "details": "Could not instantiate robot com.revrobotics.spark.SparkBase!",
+        "location": "edu.wpi.first.wpilibj.RobotBase.runRobot(RobotBase.java:406)",
+        "callStack": "",
+        "messageType": 0
+    },
+    {
+        "messageType": 2,
+        "timestamp": 96.07568359375,
+        "seqNumber": 10402,
+        "line": "\tat frc.robot.subsytem.SwerveSubsytem.<init>(SwerveSubsytem.java:34)"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 96.076171875,
+        "seqNumber": 10403,
+        "line": "\tat frc.robot.RobotContainer.<init>(RobotContainer.java:16)"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 96.07666015625,
+        "seqNumber": 10404,
+        "line": "\tat frc.robot.Robot.<init>(Robot.java:17)"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 96.07763671875,
+        "seqNumber": 10405,
+        "line": "\tat edu.wpi.first.wpilibj.RobotBase.runRobot(RobotBase.java:387)"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 96.07763671875,
+        "seqNumber": 10406,
+        "line": "\tat edu.wpi.first.wpilibj.RobotBase.startRobot(RobotBase.java:527)"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 96.0791015625,
+        "seqNumber": 10407,
+        "line": "\tat frc.robot.Main.main(Main.java:13)"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 96.080078125,
+        "seqNumber": 10408,
+        "line": ""
+    },
+    {
+        "messageType": 2,
+        "timestamp": 96.08056640625,
+        "seqNumber": 10409,
+        "line": "Error at edu.wpi.first.wpilibj.RobotBase.runRobot(RobotBase.java:400): The robot program quit unexpectedly. This is usually due to a code error."
+    },
+    {
+        "messageType": 2,
+        "timestamp": 96.0810546875,
+        "seqNumber": 10410,
+        "line": "  The above stacktrace can help determine where the error occurred."
+    },
+    {
+        "messageType": 2,
+        "timestamp": 96.08154296875,
+        "seqNumber": 10411,
+        "line": "  See https://wpilib.org/stacktrace for more information."
+    },
+    {
+        "messageType": 2,
+        "timestamp": 96.08251953125,
+        "seqNumber": 10412,
+        "line": ""
+    },
+    {
+        "messageType": 2,
+        "timestamp": 96.0830078125,
+        "seqNumber": 10413,
+        "line": "Error at edu.wpi.first.wpilibj.RobotBase.runRobot(RobotBase.java:406): Could not instantiate robot com.revrobotics.spark.SparkBase!"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 99.4873046875,
+        "seqNumber": 10414,
+        "line": "********** Robot program starting **********"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 99.515625,
+        "seqNumber": 10415,
+        "line": "NT: Listening on NT3 port 1735, NT4 port 5810"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 99.6416015625,
+        "seqNumber": 10416,
+        "line": "NT: Got a NT4 connection from 172.22.11.1 port 57253"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 99.64697265625,
+        "seqNumber": 10417,
+        "line": "NT: CONNECTED NT4 client 'Dashboard@1' (from 172.22.11.1:57253)"
+    },
+    {
+        "timestamp": 103.77099609375,
+        "seqNumber": 10418,
+        "numOccur": 1,
+        "errorCode": 0,
+        "flags": 0,
+        "details": "StatusLogger: It is not recommended to log to RoboRIO internal storage. Plug in a flash drive.",
+        "location": "",
+        "callStack": "",
+        "messageType": 1
+    },
+    {
+        "messageType": 2,
+        "timestamp": 103.77197265625,
+        "seqNumber": 10419,
+        "line": "StatusLogger: Logging REVLOG to '/home/lvuser/logs/REV_TBD_61bc611204c41a9a.revlog'"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 103.77392578125,
+        "seqNumber": 10420,
+        "line": "StatusLogger: Renamed REVLOG from 'REV_TBD_61bc611204c41a9a.revlog' to 'REV_20260221_230822.revlog' at '/home/lvuser/logs/REV_20260221_230822.revlog'"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 104.98974609375,
+        "seqNumber": 10421,
+        "line": "Instantiating NavX on roboRIO MXP Port."
+    },
+    {
+        "messageType": 2,
+        "timestamp": 104.990234375,
+        "seqNumber": 10422,
+        "line": "NavX: Library for FRC"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 104.9951171875,
+        "seqNumber": 10423,
+        "line": "NavX: Connected."
+    },
+    {
+        "messageType": 2,
+        "timestamp": 104.99658203125,
+        "seqNumber": 10424,
+        "line": "NavX: Board Type 50 (navX2-MXP (Gen 2))"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 104.998046875,
+        "seqNumber": 10425,
+        "line": "NavX: firmware version 4.0.447"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 105.0009765625,
+        "seqNumber": 10426,
+        "line": "NavX: startup initialization and startup calibration complete."
+    },
+    {
+        "messageType": 2,
+        "timestamp": 105.00244140625,
+        "seqNumber": 10427,
+        "line": "NavX: onboard startup calibration complete."
+    },
+    {
+        "messageType": 2,
+        "timestamp": 105.00341796875,
+        "seqNumber": 10428,
+        "line": "NavX: Yaw angle auto-reset to 0.0 due to startup calibration."
+    },
+    {
+        "timestamp": 105.2939453125,
+        "seqNumber": 10429,
+        "numOccur": 1,
+        "errorCode": 11,
+        "flags": 1,
+        "details": "[Spark Max] IDs: 2, Invalid parameter value, parameter id (113) Velocity Conversion Factor: The Primary Encoder velocity conversion factor. Can be used for converting rotations/min to other units of measurement., invalid value is nan",
+        "location": "",
+        "callStack": "",
+        "messageType": 0
+    },
+    {
+        "timestamp": 105.30224609375,
+        "seqNumber": 10430,
+        "numOccur": 1,
+        "errorCode": 1,
+        "flags": 1,
+        "details": "Unhandled exception instantiating robot com.revrobotics.spark.SparkBase java.lang.IllegalStateException: Invalid parameter value, parameter id",
+        "location": "com.revrobotics.spark.SparkBase.configure(SparkBase.java:352)",
+        "callStack": "\tat com.revrobotics.spark.SparkBase.configure(SparkBase.java:352)\n\tat com.revrobotics.spark.SparkMax.configure(SparkMax.java:132)\n\tat swervelib.motors.SparkMaxSwerve.lambda$burnFlash$1(SparkMaxSwerve.java:395)\n\tat swervelib.motors.SparkMaxSwerve.configureSparkMax(SparkMaxSwerve.java:117)\n\tat swervelib.motors.SparkMaxSwerve.burnFlash(SparkMaxSwerve.java:394)\n\tat swervelib.SwerveModule.<init>(SwerveModule.java:252)\n\tat swervelib.parser.SwerveDriveConfiguration.createModules(SwerveDriveConfiguration.java:76)\n\tat swervelib.parser.SwerveDriveConfiguration.<init>(SwerveDriveConfiguration.java:56)\n\tat swervelib.parser.SwerveParser.createSwerveDrive(SwerveParser.java:196)\n\tat frc.robot.subsytem.SwerveSubsytem.<init>(SwerveSubsytem.java:34)\n\tat frc.robot.RobotContainer.<init>(RobotContainer.java:16)\n\tat frc.robot.Robot.<init>(Robot.java:17)\n\tat edu.wpi.first.wpilibj.RobotBase.runRobot(RobotBase.java:387)\n\tat edu.wpi.first.wpilibj.RobotBase.startRobot(RobotBase.java:527)\n\tat frc.robot.Main.main(Main.java:13)\n",
+        "messageType": 0
+    },
+    {
+        "messageType": 2,
+        "timestamp": 105.302734375,
+        "seqNumber": 10431,
+        "line": "Error at com.revrobotics.spark.SparkBase.configure(SparkBase.java:352): Unhandled exception instantiating robot com.revrobotics.spark.SparkBase java.lang.IllegalStateException: Invalid parameter value, parameter id"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 105.3037109375,
+        "seqNumber": 10432,
+        "line": "\tat com.revrobotics.spark.SparkBase.configure(SparkBase.java:352)"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 105.30419921875,
+        "seqNumber": 10433,
+        "line": "\tat com.revrobotics.spark.SparkMax.configure(SparkMax.java:132)"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 105.30419921875,
+        "seqNumber": 10434,
+        "line": "\tat swervelib.motors.SparkMaxSwerve.lambda$burnFlash$1(SparkMaxSwerve.java:395)"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 105.3046875,
+        "seqNumber": 10435,
+        "line": "\tat swervelib.motors.SparkMaxSwerve.configureSparkMax(SparkMaxSwerve.java:117)"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 105.30517578125,
+        "seqNumber": 10436,
+        "line": "\tat swervelib.motors.SparkMaxSwerve.burnFlash(SparkMaxSwerve.java:394)"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 105.30615234375,
+        "seqNumber": 10437,
+        "line": "\tat swervelib.SwerveModule.<init>(SwerveModule.java:252)"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 105.306640625,
+        "seqNumber": 10438,
+        "line": "\tat swervelib.parser.SwerveDriveConfiguration.createModules(SwerveDriveConfiguration.java:76)"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 105.30712890625,
+        "seqNumber": 10439,
+        "line": "\tat swervelib.parser.SwerveDriveConfiguration.<init>(SwerveDriveConfiguration.java:56)"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 105.3076171875,
+        "seqNumber": 10440,
+        "line": "\tat swervelib.parser.SwerveParser.createSwerveDrive(SwerveParser.java:196)"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 105.30810546875,
+        "seqNumber": 10441,
+        "line": "\tat frc.robot.subsytem.SwerveSubsytem.<init>(SwerveSubsytem.java:34)"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 105.30859375,
+        "seqNumber": 10442,
+        "line": "\tat frc.robot.RobotContainer.<init>(RobotContainer.java:16)"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 105.30908203125,
+        "seqNumber": 10443,
+        "line": "\tat frc.robot.Robot.<init>(Robot.java:17)"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 105.3095703125,
+        "seqNumber": 10444,
+        "line": "\tat edu.wpi.first.wpilibj.RobotBase.runRobot(RobotBase.java:387)"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 105.31103515625,
+        "seqNumber": 10445,
+        "line": "\tat edu.wpi.first.wpilibj.RobotBase.startRobot(RobotBase.java:527)"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 105.3115234375,
+        "seqNumber": 10446,
+        "line": "\tat frc.robot.Main.main(Main.java:13)"
+    },
+    {
+        "timestamp": 105.3115234375,
+        "seqNumber": 10447,
+        "numOccur": 1,
+        "errorCode": 1,
+        "flags": 1,
+        "details": "The robot program quit unexpectedly. This is usually due to a code error.\n  The above stacktrace can help determine where the error occurred.\n  See https://wpilib.org/stacktrace for more information.\n",
+        "location": "edu.wpi.first.wpilibj.RobotBase.runRobot(RobotBase.java:400)",
+        "callStack": "",
+        "messageType": 0
+    },
+    {
+        "messageType": 2,
+        "timestamp": 105.3125,
+        "seqNumber": 10448,
+        "line": ""
+    },
+    {
+        "messageType": 2,
+        "timestamp": 105.3125,
+        "seqNumber": 10449,
+        "line": "Error at edu.wpi.first.wpilibj.RobotBase.runRobot(RobotBase.java:400): The robot program quit unexpectedly. This is usually due to a code error."
+    },
+    {
+        "messageType": 2,
+        "timestamp": 105.3134765625,
+        "seqNumber": 10450,
+        "line": "  The above stacktrace can help determine where the error occurred."
+    },
+    {
+        "messageType": 2,
+        "timestamp": 105.31396484375,
+        "seqNumber": 10451,
+        "line": "  See https://wpilib.org/stacktrace for more information."
+    },
+    {
+        "messageType": 2,
+        "timestamp": 105.31494140625,
+        "seqNumber": 10452,
+        "line": ""
+    },
+    {
+        "timestamp": 105.318359375,
+        "seqNumber": 10453,
+        "numOccur": 1,
+        "errorCode": 1,
+        "flags": 1,
+        "details": "Could not instantiate robot com.revrobotics.spark.SparkBase!",
+        "location": "edu.wpi.first.wpilibj.RobotBase.runRobot(RobotBase.java:406)",
+        "callStack": "",
+        "messageType": 0
+    },
+    {
+        "messageType": 2,
+        "timestamp": 105.31884765625,
+        "seqNumber": 10454,
+        "line": "Error at edu.wpi.first.wpilibj.RobotBase.runRobot(RobotBase.java:406): Could not instantiate robot com.revrobotics.spark.SparkBase!"
+    }
+]
