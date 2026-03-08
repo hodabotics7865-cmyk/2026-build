@@ -17,11 +17,9 @@ import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
  public class ShooterandIntakeSubsytem extends SubsystemBase {
     
-    private SparkMax intakeMotor = new SparkMax(Constants.ShooterandIntakeConstants.intakeMotorPort, MotorType.kBrushless);
     private SparkMax shooterMotor = new SparkMax(Constants.ShooterandIntakeConstants.shooterMotorPort, MotorType.kBrushless);
     private SparkMax indexerMotor = new SparkMax(Constants.ShooterandIntakeConstants.indexerMotorPort, MotorType.kBrushless);
     
-    public double intakeSpeed = 0;
     public double shooterSpeed = 0;
     public double indexerSpeed = 0;
 
@@ -32,12 +30,7 @@ import edu.wpi.first.wpilibj2.command.SubsystemBase;
         shooterSpeed += increment;
 
       }
-      public void  SetIntakeSpeed(double SetItspeed){
-
-        intakeSpeed = SetItspeed;
-
-      }
-
+    
    public void SetShooterSpeed(double SetMspeed){ 
 
         shooterSpeed = SetMspeed;
@@ -50,7 +43,6 @@ import edu.wpi.first.wpilibj2.command.SubsystemBase;
       }
    
       public void Shooter(){
-        intakeMotor.set(intakeSpeed); 
         shooterMotor.set(shooterSpeed);
         indexerMotor.set(indexerSpeed);
       }

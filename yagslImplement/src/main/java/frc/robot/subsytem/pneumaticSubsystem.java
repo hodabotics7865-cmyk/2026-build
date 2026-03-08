@@ -1,0 +1,20 @@
+package frc.robot.subsytem;
+
+import edu.wpi.first.wpilibj.DoubleSolenoid;
+import edu.wpi.first.wpilibj.PneumaticsModuleType;
+import edu.wpi.first.wpilibj2.command.SubsystemBase;
+
+public class pneumaticSubsystem extends SubsystemBase {
+    private final DoubleSolenoid rightSolenoid = new DoubleSolenoid(PneumaticsModuleType.REVPH, 1, 2);
+    private final DoubleSolenoid leftSolenoid  = new DoubleSolenoid(PneumaticsModuleType.REVPH, 3, 4);
+
+    public pneumaticSubsystem() {
+        rightSolenoid.set(DoubleSolenoid.Value.kReverse);
+        leftSolenoid.set(DoubleSolenoid.Value.kReverse);
+    }
+
+    public void toggleHopper() {
+        rightSolenoid.toggle();
+        leftSolenoid.toggle();
+    }
+}
