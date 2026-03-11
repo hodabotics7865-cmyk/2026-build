@@ -47,7 +47,7 @@ public class RobotContainer {
 
 
     configureBindings();
-
+    pneumaticSubsystem.pneumaticSubsystemInit();
     drivebase.setDefaultCommand(driveFieldOrientedAngularVelocity);
   }
 SwerveInputStream driveAngularVelocity = SwerveInputStream.of(drivebase.getSwerveDrive(),
@@ -65,32 +65,30 @@ SwerveInputStream driveAngularVelocity = SwerveInputStream.of(drivebase.getSwerv
   
   private void configureBindings() {
       
-    // Shooter Controls
-      driverController.rightTrigger().whileTrue(new InstantCommand(() -> ShooterandIntake.SetShooterSpeed(-0.6))); // Shoot and Intake with Right trigger button
-      driverController.leftTrigger().whileTrue(new InstantCommand(() -> ShooterandIntake.SetShooterSpeed(0.6))); // Deposit with Left trigger button
-     
-      // Indexer Controls
-      driverController.leftBumper().whileTrue(new InstantCommand(() -> ShooterandIntake.SetIndexerSpeed(0.6))); // Index Intake with left bumper
-      driverController.rightBumper().whileTrue(new InstantCommand(() -> ShooterandIntake.SetIndexerSpeed(-0.6))); // Index to Shoot or Deposit with right bumper
+    // Shoot, Intake, Depost Controls
+      driverController.rightTrigger().whileTrue(ShooterandIntake.Shooter().until(() -> Math.abs(ShooterandIntake.shooterEncoder.getVelocity() - ShooterandIntake.shooterSpeedIncrement) <= 100).andThen(()-> ShooterandIntake.SetMotorSpeed(-0.4))); // Shoot with Right trigger button
+      driverController.leftTrigger().whileTrue(new InstantCommand(() -> ShooterandIntake.SetMotorSpeed(0.4, -0.6))); // Intake  with Left trigger button
+      driverController.y().whileTrue(new InstantCommand(() -> ShooterandIntake.SetMotorSpeed(-0.4, 0.6))); // Deposit with left bumper
      
       // Full Stop Controls
-      driverController.a().whileTrue(new InstantCommand(() -> {
-        ShooterandIntake.SetShooterSpeed(0.0); // Stop with A button
-        ShooterandIntake.SetIndexerSpeed(0.0);
-      })); // Set shooter speed to 0.0 and set indexer speed to 0.0 while A button is held
+      driverController.b().whileTrue(new InstantCommand(() -> {
+        ShooterandIntake.SetMotorSpeed(0.0, 0.0); // Stop with B button
+      })); // Set shooter speed to 0.0 and set indexer speed to 0.0 while B button is held
       
       // Hopper Controls
-      driverController.y().whileTrue(new InstantCommand(() -> pneumaticSubsystem.toggleHopper()));
+      driverController.a().whileTrue(new InstantCommand(() -> pneumaticSubsystem.toggleHopper()));
   
       // Increment and Decrement Shooter Speed Controls
-      Command defaultCommand = new InstantCommand(() -> ShooterandIntake.Shooter());
+      /*Command defaultCommand = new InstantCommand(() -> ShooterandIntake.Shooter());
       defaultCommand.addRequirements(ShooterandIntake);
       ShooterandIntake.setDefaultCommand(defaultCommand); // Set the default command to stop the shooter and indexer motors when no buttons are pressed
+      */
 
-      driverController.povDown().onTrue(new InstantCommand(() -> ShooterandIntake.MoterIncrement(-0.10)));
-      driverController.povUp().onTrue(new InstantCommand(() -> ShooterandIntake.MoterIncrement(0.10)));
-      driverController.povLeft().onTrue(new InstantCommand(() -> ShooterandIntake.MoterIncrement(-0.01)));
-      driverController.povRight().onTrue(new InstantCommand(() -> ShooterandIntake.MoterIncrement(0.01)));
+      driverController.povDown().onTrue(new InstantCommand(() -> ShooterandIntake.MoterIncrement(-1000)));
+      driverController.povUp().onTrue(new InstantCommand(() -> ShooterandIntake.MoterIncrement(1000)));
+      driverController.povLeft().onTrue(new InstantCommand(() -> ShooterandIntake.MoterIncrement(-250)));
+      driverController.povRight().onTrue(new InstantCommand(() -> ShooterandIntake.MoterIncrement(250)));
+     // driverController.start().onTrue //Zero Gyro
   }
 
 
