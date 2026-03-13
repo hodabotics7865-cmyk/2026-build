@@ -70,11 +70,11 @@ SwerveInputStream driveAngularVelocity = SwerveInputStream.of(drivebase.getSwerv
       driverController.leftTrigger().whileTrue(new InstantCommand(() -> ShooterandIntake.SetShooterSpeed(0.6))); // Deposit with Left trigger button
      
       // Indexer Controls
-      driverController.leftBumper().whileTrue(new InstantCommand(() -> ShooterandIntake.SetIndexerSpeed(0.6))); // Index Intake with left bumper
+      driverController.a().whileTrue(new InstantCommand(() -> ShooterandIntake.SetIndexerSpeed(0.6))); // Index Intake with left bumper
       driverController.rightBumper().whileTrue(new InstantCommand(() -> ShooterandIntake.SetIndexerSpeed(-0.6))); // Index to Shoot or Deposit with right bumper
      
       // Full Stop Controls
-      driverController.a().whileTrue(new InstantCommand(() -> {
+      driverController.b().whileTrue(new InstantCommand(() -> {
         ShooterandIntake.SetShooterSpeed(0.0); // Stop with A button
         ShooterandIntake.SetIndexerSpeed(0.0);
       })); // Set shooter speed to 0.0 and set indexer speed to 0.0 while A button is held
