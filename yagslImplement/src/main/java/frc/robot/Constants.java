@@ -19,5 +19,5 @@ public final class Constants {
         public static int pneumaticsHubID = 1;
     }
     
-    public static final double maxSpeed = Units.feetToMeters(4.5);
+    public static final double maxSpeed = Units.feetToMeters( 20);
 }

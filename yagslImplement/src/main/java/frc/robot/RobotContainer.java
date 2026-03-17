@@ -34,16 +34,6 @@ public class RobotContainer {
 
   public RobotContainer() {
 
-    PortForwarder.add(5801, "172.29.0.1", 5801);
-    PortForwarder.add(5802, "172.29.0.1", 5802);
-    PortForwarder.add(5803, "172.29.0.1", 5803);
-    PortForwarder.add(5804, "172.29.0.1", 5804);
-    PortForwarder.add(5805, "172.29.0.1", 5805);
-    PortForwarder.add(5806, "172.29.0.1", 5806);
-    PortForwarder.add(5807, "172.29.0.1", 5807);
-    PortForwarder.add(5808, "172.29.0.1", 5808);
-    PortForwarder.add(5809, "172.29.0.1", 5809);
-
 
 
     configureBindings();
@@ -51,8 +41,8 @@ public class RobotContainer {
     drivebase.setDefaultCommand(driveFieldOrientedAngularVelocity);
   }
 SwerveInputStream driveAngularVelocity = SwerveInputStream.of(drivebase.getSwerveDrive(),
-                                                                () -> driverController.getLeftY() * -1,
-                                                                () -> driverController.getLeftX() * -1)
+                                                                () -> driverController.getLeftY() * 1,
+                                                                () -> driverController.getLeftX() * 1)
                                                             .withControllerRotationAxis(driverController::getRightX)
                                                             .deadband(OperatorConstants.DEADBAND)
                                                             .scaleTranslation(0.8)

@@ -25,7 +25,7 @@ import static edu.wpi.first.units.Units.Meter;
 
 public class SwerveSubsytem extends SubsystemBase {
 
-    double maxSpeed = Units.feetToMeters(4.5);
+    double maxSpeed = Units.feetToMeters(20);
     File directory = new File(Filesystem.getDeployDirectory(),"swerve");
     SwerveDrive  swerveDrive;
     public SwerveSubsytem() {
@@ -57,7 +57,7 @@ public class SwerveSubsytem extends SubsystemBase {
     return run(() -> {
 
       Translation2d scaledInputs = SwerveMath.scaleTranslation(new Translation2d(translationX.getAsDouble(),
-                                                                                 translationY.getAsDouble()), 0.8);
+                                                                                 translationY.getAsDouble()), 1.2);
 
       // Make the robot move
       driveFieldOriented(swerveDrive.swerveController.getTargetSpeeds(scaledInputs.getX(), scaledInputs.getY(),
