@@ -17,4 +17,8 @@ public class pneumaticSubsystem extends SubsystemBase {
         rightSolenoid.toggle();
         leftSolenoid.toggle();
     }
+
+    public void jiggyWitIt(){
+        
+    }
 }

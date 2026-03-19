@@ -23,8 +23,10 @@ import swervelib.telemetry.SwerveDriveTelemetry.TelemetryVerbosity;
 
 import static edu.wpi.first.units.Units.Meter;
 
-public class SwerveSubsytem extends SubsystemBase {
 
+
+public class SwerveSubsytem extends SubsystemBase {
+    public boolean lowGear = false;
     double maxSpeed = Units.feetToMeters(30);
     File directory = new File(Filesystem.getDeployDirectory(),"swerve");
     SwerveDrive  swerveDrive;

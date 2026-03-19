@@ -4,6 +4,9 @@
 
 package frc.robot;
 
+import edu.wpi.first.cameraserver.CameraServer;
+import frc.robot.LimelightHelpers;
+
 
 import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj2.command.Command;
@@ -15,6 +18,13 @@ public class Robot extends TimedRobot {
   private final RobotContainer m_robotContainer;
 
   public Robot() {
+  // Access via:http://roboRIO-7865-frc.local:1181
+  CameraServer.startAutomaticCapture(0);
+  // Access via:
+  // USB Index 0: http://(robotIP):5801 (UI), http://(robotIP):5800 (stream)
+  // USB Index 1: http://(robotIP):5811 (UI), http://(robotIP):5810 (stream)
+  //LimelightHelpers.setupPortForwardingUSB(1);
+
     m_robotContainer = new RobotContainer();
   }
 

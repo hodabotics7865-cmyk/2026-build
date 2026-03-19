@@ -10,6 +10,7 @@ public final class Constants {
         public static final double DEADBAND = 0.05;
     }
 
+
     public static class ShooterandIntakeConstants {
         public static final int shooterMotorPort = 10;
         public static final int indexerMotorPort = 11;
