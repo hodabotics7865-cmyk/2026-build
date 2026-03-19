@@ -25,7 +25,7 @@ import static edu.wpi.first.units.Units.Meter;
 
 public class SwerveSubsytem extends SubsystemBase {
 
-    double maxSpeed = Units.feetToMeters(20);
+    double maxSpeed = Units.feetToMeters(30);
     File directory = new File(Filesystem.getDeployDirectory(),"swerve");
     SwerveDrive  swerveDrive;
     public SwerveSubsytem() {
