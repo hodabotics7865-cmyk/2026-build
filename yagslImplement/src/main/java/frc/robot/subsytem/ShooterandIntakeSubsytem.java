@@ -30,7 +30,7 @@ import edu.wpi.first.wpilibj2.command.SubsystemBase;
     public final RelativeEncoder indexerEncoder = indexerMotor.getEncoder();
     //add intake encoder
 
-    private SimpleMotorFeedforward feedforward = new SimpleMotorFeedforward(0.1, 0.22, 0.012);
+    private SimpleMotorFeedforward feedforward = new SimpleMotorFeedforward(0.1, 0.22, 0.0125);
 
     public double shooterSpeed = 0;
     public double indexerSpeed = 0;
@@ -57,16 +57,21 @@ import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
     //Converts desired RPM into rps and figures out appropriate voltage for desired ouput
     public double launchMath(){
+
       return feedforward.calculate(targetRPM/55);
     }
 
     public void spinUp(){
       shooterMotor.setVoltage(launchMath());
       indexerMotor.set(.2);
+
     }
 
-    public void SetIndexerSpeed(double iSpeed){
-      indexerMotor.set(iSpeed);
+    public void pruge(){
+      indexerMotor.set(1);
+      //we should find motor stall levels in testing and find a way to reactively apply voltage. 
+
+      shooterMotor.set
     }
 
     public void fireShooter(){
@@ -77,6 +82,7 @@ import edu.wpi.first.wpilibj2.command.SubsystemBase;
       else{
         System.out.println("Power level insufficient");
       }
+      
     }
 
     public void incrementRPM(int rate){

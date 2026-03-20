@@ -38,7 +38,7 @@ public class RobotContainer {
 SwerveInputStream driveAngularVelocity = SwerveInputStream.of(drivebase.getSwerveDrive(),
                                                                 () -> driverController.getY() * 1,
                                                                 () -> driverController.getX() * 1)
-                                                            .withControllerRotationAxis(driverController::getTwist)
+                                                            .withControllerRotationAxis(driverController:: getTwist)
                                                             .deadband(OperatorConstants.DEADBAND)
                                                             .scaleTranslation(0.8)
                                                             .allianceRelativeControl(true);
@@ -54,14 +54,13 @@ SwerveInputStream driveAngularVelocity = SwerveInputStream.of(drivebase.getSwerv
 
 
     // Shooter Controls
-      operatorController.rightTrigger().whileTrue(new InstantCommand(() -> ShooterandIntake.fireShooter())).onFalse(new InstantCommand(()->
-      ShooterandIntake.allstop())); // Draw balls from indexer into the flywheel
+      operatorController.rightTrigger().whileTrue(new InstantCommand(() -> ShooterandIntake.fireShooter()));// Draw balls from indexer into the flywheel
       operatorController.leftTrigger().whileTrue(new InstantCommand(() -> ShooterandIntake.spinUp())); // Prepare flywheel for shooting
      
       // Indexer Controls
       operatorController.a().whileTrue(new InstantCommand(() -> ShooterandIntake.SetIndexerSpeed(0.6))); // Index Intake with left bumper
       operatorController.rightBumper().whileTrue(new InstantCommand(() -> ShooterandIntake.SetIndexerSpeed(-0.6))); // Index to Shoot or Deposit with right bumper
-      operatorController.x().whileTrue(new InstantCommand(() -> ShooterandIntake.SetIndexerSpeed(1))); //Reload
+      operatorController.x().whileTrue(new InstantCommand(() -> ShooterandIntake.purge())); //Reload
       // Full Stop Controls
       operatorController.b().whileTrue(new InstantCommand(() -> ShooterandIntake.allstop())); 
       
