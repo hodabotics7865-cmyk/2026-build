@@ -14,6 +14,7 @@ public final class Constants {
     public static class ShooterandIntakeConstants {
         public static final int shooterMotorPort = 10;
         public static final int indexerMotorPort = 11;
+        public static final int intakeMotorPort = 12;
     }
 
     public static class ControlHubConstants{

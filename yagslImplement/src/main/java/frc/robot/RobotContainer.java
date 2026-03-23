@@ -15,7 +15,7 @@ import swervelib.SwerveInputStream;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.Commands;
 import edu.wpi.first.wpilibj2.command.InstantCommand;
-
+import edu.wpi.first.wpilibj2.command.StartEndCommand;
 import edu.wpi.first.wpilibj2.command.button.CommandJoystick;
 import edu.wpi.first.wpilibj2.command.button.CommandXboxController;
 
@@ -53,15 +53,22 @@ SwerveInputStream driveAngularVelocity = SwerveInputStream.of(drivebase.getSwerv
 
 
 
-    // Shooter Controls
+      // Shooter Controls
       operatorController.rightTrigger().whileTrue(new InstantCommand(() -> ShooterandIntake.fireShooter()));// Draw balls from indexer into the flywheel
-      operatorController.leftTrigger().whileTrue(new InstantCommand(() -> ShooterandIntake.spinUp())); // Prepare flywheel for shooting
-     
+      operatorController.leftTrigger().whileTrue(Commands.startEnd(//Prepare flywheel for shooting 
+        ()-> ShooterandIntake.spinUp() ,
+        ()-> ShooterandIntake.allstop(),
+             ShooterandIntake )); //just a depenedency declaration 
+      
+      // Intake Controls
+      operatorController.rightBumper().whileTrue(new InstantCommand(() -> ShooterandIntake.Intake())); // Intake
+      operatorController.leftBumper().whileTrue(new InstantCommand(() -> ShooterandIntake.Deposit())); // Deposit
+
       // Indexer Controls
-      operatorController.a().whileTrue(new InstantCommand(() -> ShooterandIntake.SetIndexerSpeed(0.6))); // Index Intake with left bumper
-      operatorController.rightBumper().whileTrue(new InstantCommand(() -> ShooterandIntake.SetIndexerSpeed(-0.6))); // Index to Shoot or Deposit with right bumper
+      operatorController.a().whileTrue(new InstantCommand(() -> ShooterandIntake.purge())); //
       operatorController.x().whileTrue(new InstantCommand(() -> ShooterandIntake.purge())); //Reload
-      // Full Stop Controls
+
+      // Full Stop of Subsystem
       operatorController.b().whileTrue(new InstantCommand(() -> ShooterandIntake.allstop())); 
       
       // Hopper Toggle Controls Actuated with Y button
@@ -70,7 +77,7 @@ SwerveInputStream driveAngularVelocity = SwerveInputStream.of(drivebase.getSwerv
       // Increment and Decrement Shooter Speed Target Controls
       operatorController.povUp().onTrue(new InstantCommand(() -> ShooterandIntake.incrementRPM(500)));
       operatorController.povDown().onTrue(new InstantCommand(() -> ShooterandIntake.incrementRPM(-500)));
-      
+      //fine tuning
       operatorController.povLeft().onTrue(new InstantCommand(() -> ShooterandIntake.incrementRPM(-100)));
       operatorController.povRight().onTrue(new InstantCommand(() -> ShooterandIntake.incrementRPM(100)));
   }

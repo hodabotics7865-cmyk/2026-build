@@ -19,6 +19,6 @@ public class pneumaticSubsystem extends SubsystemBase {
     }
 
     public void jiggyWitIt(){
-        
+        //auto pulse hopper to assist intake
     }
 }
