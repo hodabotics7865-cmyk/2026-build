@@ -1,9 +1,11 @@
 package frc.robot.subsytem;
 
+import edu.wpi.first.epilogue.Logged;
 import edu.wpi.first.wpilibj.DoubleSolenoid;
 import edu.wpi.first.wpilibj.PneumaticsModuleType;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
+@Logged
 public class pneumaticSubsystem extends SubsystemBase {
     private final DoubleSolenoid rightSolenoid = new DoubleSolenoid(PneumaticsModuleType.REVPH, 1, 2);
     private final DoubleSolenoid leftSolenoid  = new DoubleSolenoid(PneumaticsModuleType.REVPH, 3, 4);

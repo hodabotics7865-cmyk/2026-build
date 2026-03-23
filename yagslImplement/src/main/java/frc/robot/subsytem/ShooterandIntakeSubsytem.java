@@ -11,6 +11,7 @@ import com.revrobotics.spark.SparkFlex;
 import com.revrobotics.spark.SparkMax;
 import com.revrobotics.spark.SparkLowLevel.MotorType;
 import frc.robot.Constants;
+import edu.wpi.first.epilogue.Logged;
 import edu.wpi.first.math.controller.BangBangController;
 import edu.wpi.first.math.controller.SimpleMotorFeedforward;
 import edu.wpi.first.networktables.NetworkTable;
@@ -20,7 +21,7 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
-
+@Logged
  public class ShooterandIntakeSubsytem extends SubsystemBase {
     //Map the motors and encoders for the shooter and indexer from the constants file.
     //It's Important for the controllers to know what kind of motor they are controlling, otherswise they will not function properly or could even damage the mot
@@ -56,7 +57,7 @@ import edu.wpi.first.wpilibj2.command.SubsystemBase;
     //Converts desired RPM into rps and figures out appropriate voltage for desired ouput
     public double launchMath(){
 
-      return feedforward.calculate(targetRPM/40);
+      return feedforward.calculate(targetRPM/60);
     }
 
     public void spinUp(){

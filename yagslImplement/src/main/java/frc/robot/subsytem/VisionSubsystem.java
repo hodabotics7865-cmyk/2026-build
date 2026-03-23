@@ -1,9 +1,10 @@
 package frc.robot.subsytem;
 
+import edu.wpi.first.epilogue.Logged;
 import edu.wpi.first.networktables.NetworkTableInstance;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import frc.robot.LimelightHelpers;
-
+@Logged
 public class VisionSubsystem extends SubsystemBase  {
 
     // Basic targeting data
