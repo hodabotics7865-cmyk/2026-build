@@ -56,7 +56,7 @@ import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
     //Converts desired RPM into rps and figures out appropriate voltage for desired ouput
     public double launchMath(){
-
+      
       return feedforward.calculate(targetRPM/60);
     }
 
@@ -69,14 +69,21 @@ import edu.wpi.first.wpilibj2.command.SubsystemBase;
     public void purge(){
       indexerMotor.set(1);
       //we should find motor stall levels in testing and find a way to reactively apply voltage. 
-      shooterMotor.set(-0.3);
       intakeMotor.set(-.5);
 
     }
 
+    public void fullPurge(){
+      indexerMotor.set(1);
+      //we should find motor stall levels in testing and find a way to reactively apply voltage. 
+      intakeMotor.set(-.5);
+      shooterMotor.set(-.3);
+    }
+
     public void fireShooter(){
       if (shooterEncoder.getVelocity() >= targetRPM) {
-        indexerMotor.set(-0.8);  
+        indexerMotor.set(-0.9); 
+        intakeMotor.set(-1); 
         System.out.println("It's over 9000!!!!");
       }
       else{
@@ -86,13 +93,13 @@ import edu.wpi.first.wpilibj2.command.SubsystemBase;
     }
 
     public void Intake(){
-      indexerMotor.set(.5);
-      intakeMotor.set(.5);
+      indexerMotor.set(.75);
+      intakeMotor.set(-.75);
     }
 
     public void Deposit(){
       indexerMotor.set(-.5);
-      intakeMotor.set(-.5);
+      intakeMotor.set(.5);
     }
 
     public void incrementRPM(int rate){

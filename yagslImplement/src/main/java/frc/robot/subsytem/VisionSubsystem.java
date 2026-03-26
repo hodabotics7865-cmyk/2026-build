@@ -1,7 +1,7 @@
 package frc.robot.subsytem;
 
 import edu.wpi.first.epilogue.Logged;
-import edu.wpi.first.networktables.NetworkTableInstance;
+
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import frc.robot.LimelightHelpers;
 @Logged
@@ -16,10 +16,14 @@ public class VisionSubsystem extends SubsystemBase  {
     double txnc = LimelightHelpers.getTXNC("");  // Horizontal offset from principal pixel/point to target in degrees
     double tync = LimelightHelpers.getTYNC("");  // Vertical offset from principal pixel/point to target in degrees
 
+    
+
+
+
     /*
     public String stream = NetworkTableInstance.getDefault().getTable("limelight").getEntry("stream").getString("0");
-    public double tx = NetworkTableInstance.getDefault().getTable("limelight").getEntry("tx").getDouble(0);
-    public double ty = NetworkTableInstance.getDefault().getTable("limelight").getEntry("ty").getDouble(0);
+q@wWWWWWWWWWWWWWWWWWWWWWWW1Azq public double tx = NetworkTableInstance.getDefault().getTable("limelight").getEntry("tx").getDouble(0);
+q@wWWWWWWWWWWWWWWWWWWWWWWW1Azq public double ty = NetworkTableInstance.getDefault().getTable("limelight").getEntry("ty").getDouble(0);
     public double ta = NetworkTableInstance.getDefault().getTable("limelight").getEntry("ta").getDouble(0);
     public boolean hasTarget = NetworkTableInstance.getDefault().getTable("limelight").getEntry("tv").getDouble(0) == 1;
     */

@@ -19,8 +19,8 @@ public final class Constants {
 
     public static class ControlHubConstants{
         public static final int powerHubID = 31;
-        public static int pneumaticsHubID = 1;
+        public static final int pneumaticsHubID = 1;
     }
     
-    public static final double maxSpeed = Units.feetToMeters( 20);
+    public static  double maxSpeed = Units.feetToMeters( 30);
 }
