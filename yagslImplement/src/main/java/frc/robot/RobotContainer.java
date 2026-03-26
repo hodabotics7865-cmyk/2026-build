@@ -6,43 +6,28 @@ package frc.robot;
 
 import frc.robot.Constants.OperatorConstants;
 import frc.robot.subsytem.SwerveSubsytem;
-import frc.robot.subsytem.VisionSubsystem;
 import frc.robot.subsytem.pneumaticSubsystem;
 import frc.robot.subsytem.ShooterandIntakeSubsytem;
 import swervelib.SwerveInputStream;
 
-import java.security.PublicKey;
 
-import edu.wpi.first.net.PortForwarder;
-import edu.wpi.first.wpilibj.DoubleSolenoid;
-import edu.wpi.first.wpilibj.PneumaticsModuleType;
-import edu.wpi.first.wpilibj.Solenoid;
+
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.Commands;
 import edu.wpi.first.wpilibj2.command.InstantCommand;
+import edu.wpi.first.wpilibj2.command.StartEndCommand;
+import edu.wpi.first.wpilibj2.command.button.CommandJoystick;
 import edu.wpi.first.wpilibj2.command.button.CommandXboxController;
 
 public class RobotContainer {
 
     private final pneumaticSubsystem pneumaticSubsystem = new pneumaticSubsystem();
-    private final VisionSubsystem visionSubsystem = new VisionSubsystem();
-    private final SwerveSubsytem drivebase = new SwerveSubsytem();
+    public final SwerveSubsytem drivebase = new SwerveSubsytem();
     private final ShooterandIntakeSubsytem ShooterandIntake = new ShooterandIntakeSubsytem();
-
-    private final CommandXboxController driverController = 
-     new CommandXboxController(Constants.OperatorConstants.kDriverControllerPort);
-
+    private final CommandXboxController operatorController = new CommandXboxController(Constants.OperatorConstants.kOperatorControllerPort);
+    private final CommandJoystick driverController = new CommandJoystick(Constants.OperatorConstants.kDriverControllerPort);
+    private static double  lowGear = 0.1;
   public RobotContainer() {
-
-    PortForwarder.add(5801, "172.29.0.1", 5801);
-    PortForwarder.add(5802, "172.29.0.1", 5802);
-    PortForwarder.add(5803, "172.29.0.1", 5803);
-    PortForwarder.add(5804, "172.29.0.1", 5804);
-    PortForwarder.add(5805, "172.29.0.1", 5805);
-    PortForwarder.add(5806, "172.29.0.1", 5806);
-    PortForwarder.add(5807, "172.29.0.1", 5807);
-    PortForwarder.add(5808, "172.29.0.1", 5808);
-    PortForwarder.add(5809, "172.29.0.1", 5809);
 
 
 
@@ -51,50 +36,66 @@ public class RobotContainer {
     drivebase.setDefaultCommand(driveFieldOrientedAngularVelocity);
   }
 SwerveInputStream driveAngularVelocity = SwerveInputStream.of(drivebase.getSwerveDrive(),
-                                                                () -> driverController.getLeftY() * -1,
-                                                                () -> driverController.getLeftX() * -1)
-                                                            .withControllerRotationAxis(driverController::getRightX)
+                                                                () -> driverController.getY() * 1,
+                                                                () -> driverController.getX() * 1)
+                                                            .withControllerRotationAxis(driverController::  getTwist)
                                                             .deadband(OperatorConstants.DEADBAND)
-                                                            .scaleTranslation(0.8)
+                                                            .scaleTranslation(.8 - lowGear)
                                                             .allianceRelativeControl(true);
-  SwerveInputStream driveDirectAngle = driveAngularVelocity.copy().withControllerHeadingAxis(driverController::getRightX,
-                                                                                             driverController::getRightY)
+  SwerveInputStream driveDirectAngle = driveAngularVelocity.copy().withControllerHeadingAxis(driverController::getX,
+                                                                                             driverController::getY)
                                                            .headingWhile(true);
   Command driveFieldOrientedDirectAngle = drivebase.driveFieldOriented(driveDirectAngle);
   Command driveFieldOrientedAngularVelocity = drivebase.driveFieldOriented(driveAngularVelocity);
   
   private void configureBindings() {
+    //adjust x-y scalar based on if trigger is pressed.
+    driverController.button(2).whileTrue(Commands.startEnd(
+      () -> lowGear = 0.1,
+      () -> lowGear = 0,
+      drivebase
+      ));
+    //Intake for driver
+    driverController.button(1).whileTrue(Commands.startEnd(
+      () -> ShooterandIntake.Intake(), 
+      () -> ShooterandIntake.allstop(), ShooterandIntake));
+
+driverController.button(3).whileTrue(Commands.startEnd(
+      () -> ShooterandIntake.Deposit(), 
+      () -> ShooterandIntake.allstop(), ShooterandIntake));
       
-    // Shooter Controls
-      driverController.rightTrigger().whileTrue(new InstantCommand(() -> ShooterandIntake.SetShooterSpeed(-0.6))); // Shoot and Intake with Right trigger button
-      driverController.leftTrigger().whileTrue(new InstantCommand(() -> ShooterandIntake.SetShooterSpeed(0.6))); // Deposit with Left trigger button
-     
+      // Shooter Controls
+      operatorController.rightTrigger().whileTrue(new InstantCommand(() -> ShooterandIntake.fireShooter()));// Draw balls from indexer into the flywheel
+      operatorController.leftTrigger().whileTrue(Commands.startEnd(//Prepare flywheel for shooting 
+        ()-> ShooterandIntake.spinUp() ,
+        ()-> ShooterandIntake.allstop(),
+             ShooterandIntake )); //just a depenedency declaration 
+      
+      // Intake Controls
+      operatorController.rightBumper().whileTrue(new InstantCommand(() -> ShooterandIntake.Intake())); // Intake
+      operatorController.leftBumper().whileTrue(new InstantCommand(() -> ShooterandIntake.Deposit())); // Deposit
+
+
       // Indexer Controls
-      driverController.leftBumper().whileTrue(new InstantCommand(() -> ShooterandIntake.SetIndexerSpeed(0.6))); // Index Intake with left bumper
-      driverController.rightBumper().whileTrue(new InstantCommand(() -> ShooterandIntake.SetIndexerSpeed(-0.6))); // Index to Shoot or Deposit with right bumper
-     
-      // Full Stop Controls
-      driverController.a().whileTrue(new InstantCommand(() -> {
-        ShooterandIntake.SetShooterSpeed(0.0); // Stop with A button
-        ShooterandIntake.SetIndexerSpeed(0.0);
-      })); // Set shooter speed to 0.0 and set indexer speed to 0.0 while A button is held
+      operatorController.a().whileTrue(new InstantCommand(() -> ShooterandIntake.purge())); //
+      operatorController.x().whileTrue(new InstantCommand(() -> ShooterandIntake.fullPurge())); //Reload
+
+      // Full Stop of Subsystem
+      operatorController.b().whileTrue(new InstantCommand(() -> ShooterandIntake.allstop())); 
       
-      // Hopper Controls
-      driverController.y().whileTrue(new InstantCommand(() -> pneumaticSubsystem.toggleHopper()));
+      // Hopper Toggle Controls Actuated with Y button
+      operatorController.back().whileTrue(new InstantCommand(() -> pneumaticSubsystem.toggleHopper()));
   
-      // Increment and Decrement Shooter Speed Controls
-      Command defaultCommand = new InstantCommand(() -> ShooterandIntake.Shooter());
-      defaultCommand.addRequirements(ShooterandIntake);
-      ShooterandIntake.setDefaultCommand(defaultCommand); // Set the default command to stop the shooter and indexer motors when no buttons are pressed
-
-      driverController.povDown().onTrue(new InstantCommand(() -> ShooterandIntake.MoterIncrement(-0.10)));
-      driverController.povUp().onTrue(new InstantCommand(() -> ShooterandIntake.MoterIncrement(0.10)));
-      driverController.povLeft().onTrue(new InstantCommand(() -> ShooterandIntake.MoterIncrement(-0.01)));
-      driverController.povRight().onTrue(new InstantCommand(() -> ShooterandIntake.MoterIncrement(0.01)));
+      // Increment and Decrement Shooter Speed Target Controls
+      operatorController.povUp().onTrue(new InstantCommand(() -> ShooterandIntake.incrementRPM(500)));
+      operatorController.povDown().onTrue(new InstantCommand(() -> ShooterandIntake.incrementRPM(-500)));
+      //fine tuning
+      operatorController.povLeft().onTrue(new InstantCommand(() -> ShooterandIntake.incrementRPM(-100)));
+      operatorController.povRight().onTrue(new InstantCommand(() -> ShooterandIntake.incrementRPM(100)));
   }
-
 
   public Command getAutonomousCommand() {
     return Commands.print("No autonomous command configured");
   }
+
 }
