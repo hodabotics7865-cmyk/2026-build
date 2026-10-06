@@ -21,15 +21,4 @@ public class pneumaticSubsystem extends SubsystemBase {
         rightSolenoid.toggle();
         leftSolenoid.toggle();
     }
-
-    public void jiggyWitIt(){
-        //auto pulse hopper to assist intake
-    }
-
-    @Override
-    public void initSendable(SendableBuilder builder) {
-    super.initSendable(builder);
-    // Publish the solenoid state to telemetry.
-    builder.addBooleanProperty("Hopper extended", () -> rightSolenoid.get() == Value.kForward , null);
-    }
 }

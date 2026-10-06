@@ -5,11 +5,15 @@ import static edu.wpi.first.units.Units.DegreesPerSecond;
 import static edu.wpi.first.units.Units.DegreesPerSecondPerSecond;
 import static edu.wpi.first.units.Units.Seconds;
 
+import com.revrobotics.PersistMode;
 import com.revrobotics.RelativeEncoder;
 import com.revrobotics.spark.SparkFlex;
 // import com.ctre.phoenix6.sim.TalonFXSimState.MotorType;
 import com.revrobotics.spark.SparkMax;
+import com.revrobotics.ResetMode;
 import com.revrobotics.spark.SparkLowLevel.MotorType;
+import com.revrobotics.spark.config.SparkMaxConfig;
+
 import frc.robot.Constants;
 import edu.wpi.first.epilogue.Logged;
 import edu.wpi.first.math.controller.BangBangController;
@@ -25,7 +29,7 @@ import edu.wpi.first.wpilibj2.command.SubsystemBase;
  public class ShooterandIntakeSubsytem extends SubsystemBase {
     //Map the motors and encoders for the shooter and indexer from the constants file.
     //It's Important for the controllers to know what kind of motor they are controlling, otherswise they will not function properly or could even damage the mot
-    private SparkMax shooterMotor = new SparkMax(Constants.ShooterandIntakeConstants.shooterMotorPort, MotorType.kBrushless);
+    private SparkFlex shooterMotor = new SparkFlex(Constants.ShooterandIntakeConstants.shooterMotorPort, MotorType.kBrushless);
     private SparkMax indexerMotor = new SparkMax(Constants.ShooterandIntakeConstants.indexerMotorPort, MotorType.kBrushless);
     private SparkFlex intakeMotor = new SparkFlex(Constants.ShooterandIntakeConstants.intakeMotorPort, MotorType.kBrushless);
 
@@ -35,7 +39,6 @@ import edu.wpi.first.wpilibj2.command.SubsystemBase;
     public final RelativeEncoder intakeEncoder = intakeMotor.getEncoder();
 
     private SimpleMotorFeedforward feedforward = new SimpleMotorFeedforward(0.1, 0.22, 0.0125);
-    private BangBangController shooterClearBang = new BangBangController();
 
     public double shooterSpeed = 0;
     public double indexerSpeed = 0;
@@ -43,7 +46,10 @@ import edu.wpi.first.wpilibj2.command.SubsystemBase;
     public double targetRPM = 3000; 
 
     public ShooterandIntakeSubsytem() {
+      SparkMaxConfig config = new SparkMaxConfig();
 
+      config.smartCurrentLimit(50);
+      shooterMotor.configure(config, ResetMode.kResetSafeParameters, PersistMode.kPersistParameters);
     }
 
     public void allstop(){
@@ -83,7 +89,7 @@ import edu.wpi.first.wpilibj2.command.SubsystemBase;
     public void fireShooter(){
       if (shooterEncoder.getVelocity() >= targetRPM) {
         indexerMotor.set(-0.9); 
-        intakeMotor.set(-1); 
+        intakeMotor.set(-0.4); 
         System.out.println("It's over 9000!!!!");
       }
       else{

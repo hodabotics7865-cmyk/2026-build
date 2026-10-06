@@ -16,10 +16,11 @@ import edu.wpi.first.cscore.UsbCamera;
 import edu.wpi.first.epilogue.Epilogue;
 import edu.wpi.first.epilogue.Logged;
 import edu.wpi.first.math.util.Units;
-import frc.robot.LimelightHelpers;
+
 import frc.robot.subsytem.ShooterandIntakeSubsytem;
 import swervelib.SwerveDrive;
 import edu.wpi.first.wpilibj.TimedRobot;
+import edu.wpi.first.wpilibj.Timer;
 import edu.wpi.first.wpilibj.smartdashboard.Field2d;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj2.command.Command;
@@ -31,7 +32,7 @@ public class Robot extends TimedRobot {
 
   private final RobotContainer m_robotContainer;
 
-  Thread m_visionThread;  
+  //Thread m_visionThread;  
 
   public Robot() {
     /*
@@ -42,30 +43,30 @@ public class Robot extends TimedRobot {
     */
 
   // Access via:http://roboRIO-7865-frc.local:1181
-    m_visionThread = new Thread(
-            () -> {
-              // Get the UsbCamera from CameraServer
-              UsbCamera camera = CameraServer.startAutomaticCapture();
-              // Set the resolution
-              camera.setResolution(640, 480);
-              camera.setFPS(20);
+    // m_visionThread = new Thread(
+    //         () -> {
+    //           // Get the UsbCamera from CameraServer
+    //           UsbCamera camera = CameraServer.startAutomaticCapture();
+    //           // Set the resolution
+    //           camera.setResolution(640, 480);
+    //           camera.setFPS(20);
 
-              // Get a CvSink. This will capture Mats from the camera
-              CvSink cvSink = CameraServer.getVideo();
-              // Setup a CvSource. This will send images back to the Dashboard
-              CvSource outputStream = CameraServer.putVideo("Rectangle", 640, 480);
+    //           // Get a CvSink. This will capture Mats from the camera
+    //           CvSink cvSink = CameraServer.getVideo();
+    //           // Setup a CvSource. This will send images back to the Dashboard
+    //           CvSource outputStream = CameraServer.putVideo("Rectangle", 640, 480);
 
-              }
-            );
+    //           }
+    //         );
 
   // Access via:
   // USB Index 0: http://(robotIP):5801 (UI), http://(robotIP):5800 (stream)
   // USB Index 1: http://(robotIP):5811 (UI), http://(robotIP):5810 (stream)
-  LimelightHelpers.setupPortForwardingUSB(1);
+  //LimelightHelpers.setupPortForwardingUSB(1);
 
     m_robotContainer = new RobotContainer();
-    m_visionThread.setDaemon(true);
-    m_visionThread.start();
+   // m_visionThread.setDaemon(true);
+   // m_visionThread.start();
     Epilogue.bind(this);
   }
 
@@ -74,8 +75,16 @@ public class Robot extends TimedRobot {
 
 
     CommandScheduler.getInstance().run();
-    //SwerveDrive.setRobotPose(m_odometry.getPoseMeters());
-
+    /* 
+    // get pose
+    // check pose
+    // apply pose
+    // m_robotContainer.drivebase.getSwerveDrive().addVisionMeasurement(LimelightHelpers.getBotPose3d_wpiBlue("limelight-7865").toPose2d(), llMeasurement.timestampSeconds);
+    var llMeasurement = LimelightHelpers.getBotPoseEstimate_wpiBlue_MegaTag2("limelight-7865");
+    if (llMeasurement != null && llMeasurement.tagCount > 0)
+        // m_robotContainer.drivebase.getSwerveDrive().addVisionMeasurement(llMeasurement.pose, llMeasurement.timestampSeconds);
+        m_robotContainer.drivebase.getSwerveDrive().addVisionMeasurement(llMeasurement.pose, Timer.getFPGATimestamp());
+    */
 
   }
 
